@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://sbns2q18gdd6"]
+
+[ext_resource type="PackedScene" uid="uid://clwopr1x8gql0" path="res://scenes/map1.tscn" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://ql6yjbm5rt2o" path="res://scripts/world.gd" id="1_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://cqngyq22qcvt5" path="res://scenes/player.tscn" id="3_aqk2v"]
+
+[sub_resource type="TileSet" id="TileSet_tlwt5"]
+
+[node name="world" type="Node2D"]
+script = ExtResource("1_tlwt5")
+
+[node name="player" parent="." instance=ExtResource("3_aqk2v")]
+
+[node name="map1" parent="." instance=ExtResource("1_f3sb7")]
+tile_set = SubResource("TileSet_tlwt5")
