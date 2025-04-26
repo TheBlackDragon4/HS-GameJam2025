@@ -9,12 +9,13 @@ Programmed source code for the third official HS-Coburg GameJam 2025
 ## Funktionalitäten
 - [ ] Gui um besser Gebäude zu platzieren 
 - [ ] Spiegel (Licht prallt an Spiegel ab (90° Winkel z.B.))
-- [ ] Partikel -> schießen (Partikel können von Punkt x zu y bewegt werden)
+- [x] Partikel -> schießen (Partikel können von Punkt x zu y bewegt werden) -> Effekt mit eigener Szene
 - [ ] Collector, kann Licht sammeln (Gebäude, welches Licht von Glühwürmchen einsammelt, und an einen nahegelegenen Lichtmast sendet)
 - [ ] Lichtmast, kann Wege zwischen Lichter machen (hat einen *from* und *to* location, was Partikel von einer Location zur nächsten nahegelegenen Location sendet)
 - [ ] Beacon (Biom-Laterne die neue Strukturen freischaltet. Hierbei als "*Questabgabe*" um neue Strukturen zu bekommen)
 - [ ] Prism shiftet Frequenz / Farbe des Lichts (Anfang evtl. fix, später nach Value)
 - [ ] Kanone, kann große Mengen Licht schicken (Evtl. Zielposition irgendwie auswählen oder so)
+- [ ] Scallierung
 
 ## Gebäude / -Sprites
 - [ ] Gui 
