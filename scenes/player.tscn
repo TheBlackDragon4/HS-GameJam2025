@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://cqngyq22qcvt5"]
+[gd_scene load_steps=16 format=3 uid="uid://cqngyq22qcvt5"]
 
 [ext_resource type="Texture2D" uid="uid://cqf07dgtfpc5w" path="res://assets/textures/pixil-frame-0.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://b18phriw5wnet" path="res://scripts/player.gd" id="2_onrkg"]
 [ext_resource type="Texture2D" uid="uid://nd6enmopt6pe" path="res://assets/textures/point light.png" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://ddv41a6yuvs6" path="res://assets/textures/Spritesheet_Bloom.png" id="3_dqkch"]
 [ext_resource type="Script" uid="uid://diuxhmsynjoyb" path="res://scripts/animated_sprite_2d.gd" id="4_qlg0r"]
+[ext_resource type="PackedScene" uid="uid://o51x54ois6bs" path="res://scenes/ui.tscn" id="7_fjrip"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4flbx"]
 size = Vector2(14, 14)
@@ -99,3 +100,5 @@ script = ExtResource("4_qlg0r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_4flbx")
+
+[node name="NinePatchRect" parent="." instance=ExtResource("7_fjrip")]
