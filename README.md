@@ -30,6 +30,14 @@ Programmed source code for the third official HS-Coburg GameJam 2025
 - [x] Licht an- / ausschalten
 - [ ] Bewegendes Licht
 - [ ] Licht welches sich zwischen Lichtmasten bewegt
-- [ ] Collector sammelt Licht von Glühwürmchen
+- [x] Collector sammelt Licht von Glühwürmchen (slurp)
 - [ ] Licht wird bei Spiegel umgeleitet
-- [ ] Öffnen und schließen der GUI
+- [x] Öffnen und schließen der GUI
+- [x] Game Start
+- [x] Button pressed sound
+- [x] Sound off
+- [x] UI Sound 
+- [x] Warnings
+- [x] Exit menu
+- [x] UI interface 
+- [x] Notification
