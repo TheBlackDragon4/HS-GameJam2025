@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://do20uf55sfgta"]
+
+[ext_resource type="Texture2D" uid="uid://cqf07dgtfpc5w" path="res://assets/textures/pixil-frame-0.png" id="1_6i4i3"]
+[ext_resource type="Texture2D" uid="uid://dljojwqigg53f" path="res://assets/textures/icon.svg" id="2_4cfym"]
+[ext_resource type="Script" uid="uid://b6qpqjbp18ov3" path="res://scenes/hotbar_slot.gd" id="2_ntl0e"]
+
+[node name="HotbarSlot" type="Button"]
+offset_right = 16.0
+offset_bottom = 16.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon_alignment = 1
+script = ExtResource("2_ntl0e")
+metadata/MenuToItem = [0, 0]
+metadata/MenuToImage = [null, null]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+z_index = 9
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemPicture" type="TextureRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("2_4cfym")
+expand_mode = 2
+
+[node name="SlotBorder" type="TextureRect" parent="CenterContainer"]
+z_index = 10
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("1_6i4i3")
+expand_mode = 2
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="ready" from="." to="." method="_on_ready"]

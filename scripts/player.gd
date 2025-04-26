@@ -9,6 +9,7 @@ var _grid_size = 16
 var sprite_position = Vector2()
 var motion = Vector2()
 var selected_tile = Vector2i(0,0)
+var selected_menu = 0
 
 var tab = 0
 var tabCount = 1
@@ -16,6 +17,10 @@ var scenesIndex = 0
 var scenesCount = 2
 
 var orientation = 0 # 0 = left, 1 = right
+
+var hotbarPos = 1
+
+var currentSlot
 
 #scan tile at px position and interact with it
 func _ready() -> void:
@@ -57,24 +62,61 @@ func handle_inputs() -> void:
 		print("destroy")
 		_map_buildings.set_cell(selected_tile, 0, Vector2i(0, 0))
 	if Input.is_action_just_pressed("build"):
+		print("build:", scenesIndex)
+		
 		print("build")
-		_map_buildings.set_cell(selected_tile, 0, Vector2i(0, 0), scenesIndex)
+		
+		_map_buildings.set_cell(selected_tile, selected_menu, Vector2i(0, 0), scenesIndex)
 	if Input.is_action_just_pressed("rotate"):
 		print("rotate")
 		
 	if Input.is_action_just_pressed("tab left"):
+		print("tab-left", scenesIndex)
 		tab = posmod((tab-1), tabCount)
 		scenesCount = _map_buildings["tile_set"].get_source(tab).get_alternative_tiles_count(Vector2i(0, 0)) 
-		scenesIndex = 1
+		
+		if (selected_menu+2)%2 == 0:
+			selected_menu = 1
+			$"../NinePatchRect".get_node("Label").text = "Machines"
+		elif (selected_menu+2)%2 == 1:
+			selected_menu = 0
+			$"../NinePatchRect".get_node("Label").text = "Buildings"
+		for slot in $"../NinePatchRect/Hotbar".get_children():
+			slot.get_node("CenterContainer/ItemPicture").texture = \
+				slot.get_meta("MenuToImage")[selected_menu]
+			
 	if Input.is_action_just_pressed("tab right"):
+		print("tab-right", scenesIndex)
 		tab = posmod((tab+1), tabCount)
 		scenesCount = _map_buildings["tile_set"].get_source(tab).get_alternative_tiles_count(Vector2i(0, 0))  
-		scenesIndex = 1
-	if Input.is_action_just_pressed("menu left"):
-		scenesIndex = posmod((scenesIndex-2), scenesCount)+1
-	if Input.is_action_just_pressed("menu right"):
-		scenesIndex = posmod((scenesIndex), scenesCount)+1
+		if (selected_menu+2)%2 == 0:
+			selected_menu = 1
+			$"../NinePatchRect".get_node("Label").text = "Machines"
+		elif (selected_menu+2)%2 == 1:
+			selected_menu = 0
+			$"../NinePatchRect".get_node("Label").text = "Buildings"
+		for slot in $"../NinePatchRect/Hotbar".get_children():
+			slot.get_node("CenterContainer/ItemPicture").texture = \
+				slot.get_meta("MenuToImage")[selected_menu]
 
+	if Input.is_action_just_pressed("menu left"):
+		scenesIndex = get_viewport().gui_get_focus_owner().get_meta("MenuToItem")[selected_menu]
+		print("menu left", scenesIndex)
+		
+	if Input.is_action_just_pressed("menu right"):
+		scenesIndex = get_viewport().gui_get_focus_owner().get_meta("MenuToItem")[selected_menu]
+		print("menu right", scenesIndex)
+
+	if Input.is_action_just_pressed("hud"):
+		var temp =  $"../NinePatchRect"
+		print("z/OS")
+		if temp.visible == true:
+			temp.visible = false
+		else:
+			temp.visible = true
+			temp.get_child(0).get_child(0).grab_focus()
+	#$HotbarSlot.
+		#get_viewport().gui_get_focus_owner().
 		
 #build: place selected tile
 
