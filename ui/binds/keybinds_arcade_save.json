@@ -1,0 +1,50 @@
+{
+	"input_up": {
+		"type": "keyboard",
+		"key": 87
+	},
+	"input_down": {
+		"type": "keyboard",
+		"key": 83
+	},
+	"input_left": {
+		"type": "keyboard",
+		"key": 65
+	},
+	"input_right": {
+		"type": "keyboard",
+		"key": 68
+	},
+	"input_action": {
+		"type": "keyboard",
+		"key": 72
+	},
+	"input_inventory": {
+		"type": "keyboard",
+		"key": 74
+	},
+	"input_opt_3": {
+		"type": "keyboard",
+		"key": 75
+	},
+	"input_opt_4": {
+		"type": "keyboard",
+		"key": 76
+	},
+	"input_opt_5": {
+		"type": "keyboard",
+		"key": 85
+	},
+	"input_opt_6": {
+		"type": "keyboard",
+		"key": 73
+	},
+	"input_opt_7": {
+		"type": "keyboard",
+		"key": 79
+	},
+	"input_opt_8": {
+		"type": "keyboard",
+		"key": 80
+	}
+}

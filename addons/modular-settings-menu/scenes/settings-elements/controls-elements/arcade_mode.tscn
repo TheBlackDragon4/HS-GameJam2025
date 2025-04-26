@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=3 uid="uid://qh70swp7jtlo"]
+
+[ext_resource type="AudioStream" uid="uid://cpkewhcblnqj" path="res://sounds/beeep.mp3" id="1_efuup"]
+
+[sub_resource type="GDScript" id="GDScript_bpxmf"]
+resource_name = "toggle_element_template"
+script/source = "extends ToggleElement
+
+@onready var key_bindings_ref = $\"../SubSectionElements/InputSettings\"
+@onready var beep = $\"%Beep\"
+@onready var controls = $\"../../../../../..\"
+
+var is_button_pressed = false
+var button_hold_time = 0.0
+const HOLD_DURATION = 2.0
+
+# Called to apply the setting to the game
+func _apply_settings() -> void:
+	apply_in_game_setting(currentValue)
+
+func _process(delta):# Check if the button is being pressed
+	if Input.is_key_pressed(KEY_DELETE):  # Replace \"ui_accept\" with your desired action
+		if not is_button_pressed:
+			is_button_pressed = true
+			button_hold_time = 0.0  # Reset timer when button is first pressed
+		else:
+			button_hold_time += delta  # Increment hold time
+		# Trigger the function if the button has been held long enough
+		if button_hold_time >= HOLD_DURATION:
+			toggled(!currentValue)
+			print(\"Triggering Arcade Mode: \", currentValue)
+			beep.play()
+			key_bindings_ref.set_arcade(true)
+			button_hold_time = 0.0
+	else:
+		# Reset when the button is released
+		is_button_pressed = false
+		button_hold_time = 0.0
+	
+func toggled(state: bool) -> void:
+	super(state)
+	
+	# Disable key bindings in arcade mode
+	key_bindings_ref.disabled = state
+	key_bindings_ref.set_arcade(state)
+	
+"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_drjjf"]
+
+[node name="ArcadeMode" type="HBoxContainer" node_paths=PackedStringArray("ToggleRef")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_bpxmf")
+ToggleRef = NodePath("Toggle")
+IDENTIFIER = "ArcadeMode"
+IS_IN_GAME_SETTING = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Arcade Mode"
+vertical_alignment = 1
+
+[node name="Toggle" type="CheckButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_drjjf")
+
+[node name="Beep" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("1_efuup")
