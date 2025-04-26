@@ -27,6 +27,7 @@ Programmed source code for the third official HS-Coburg GameJam 2025
 - [ ] Kanone, kann große Mengen Licht schicken
 
 ## Sounds
+- [x] Licht an- / ausschalten
 - [ ] Bewegendes Licht
 - [ ] Licht welches sich zwischen Lichtmasten bewegt
 - [ ] Collector sammelt Licht von Glühwürmchen
