@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://do20uf55sfgta"]
+[gd_scene load_steps=6 format=3 uid="uid://do20uf55sfgta"]
 
 [ext_resource type="Texture2D" uid="uid://cqf07dgtfpc5w" path="res://assets/textures/pixil-frame-0.png" id="1_6i4i3"]
 [ext_resource type="Texture2D" uid="uid://dljojwqigg53f" path="res://assets/textures/icon.svg" id="2_4cfym"]
 [ext_resource type="Script" uid="uid://b6qpqjbp18ov3" path="res://scenes/hotbar_slot.gd" id="2_ntl0e"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ntl0e"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_4cfym"]
 
 [node name="HotbarSlot" type="Button"]
 offset_right = 16.0
@@ -28,6 +32,12 @@ offset_right = 8.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+material = SubResource("CanvasItemMaterial_ntl0e")
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = SubResource("CanvasTexture_4cfym")
 
 [node name="ItemPicture" type="TextureRect" parent="CenterContainer"]
 custom_minimum_size = Vector2(16, 16)

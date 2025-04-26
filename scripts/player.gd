@@ -13,8 +13,8 @@ var selected_menu = 0
 
 var tab = 0
 var tabCount = 1
-var scenesIndex = 0
-var scenesCount = 2
+var scenesIndex = -1
+#var scenesCount = 2
 
 var orientation = 0 # 0 = left, 1 = right
 
@@ -25,7 +25,8 @@ var currentSlot
 #scan tile at px position and interact with it
 func _ready() -> void:
 	tabCount = _map_buildings["tile_set"].get_source_count()
-	scenesCount = _map_buildings["tile_set"].get_source(0).get_alternative_tiles_count(Vector2i(0, 0)) 
+	scenesIndex = $"../NinePatchRect".get_child(0).get_child(0).get_meta("MenuToItem")[selected_menu]
+	#scenesCount = _map_buildings["tile_set"].get_source(0).get_alternative_tiles_count(Vector2i(0, 0)) 
 
 func _physics_process(_delta: float) -> void:
 	handle_movement()
@@ -62,18 +63,18 @@ func handle_inputs() -> void:
 		print("destroy")
 		_map_buildings.set_cell(selected_tile, 0, Vector2i(0, 0))
 	if Input.is_action_just_pressed("build"):
+		print("build")
 		print("build:", scenesIndex)
 		
-		print("build")
-		
 		_map_buildings.set_cell(selected_tile, selected_menu, Vector2i(0, 0), scenesIndex)
+	
 	if Input.is_action_just_pressed("rotate"):
 		print("rotate")
 		
 	if Input.is_action_just_pressed("tab left"):
 		print("tab-left", scenesIndex)
 		tab = posmod((tab-1), tabCount)
-		scenesCount = _map_buildings["tile_set"].get_source(tab).get_alternative_tiles_count(Vector2i(0, 0)) 
+		#scenesCount = _map_buildings["tile_set"].get_source(tab).get_alternative_tiles_count(Vector2i(0, 0)) 
 		
 		if (selected_menu+2)%2 == 0:
 			selected_menu = 1
@@ -88,7 +89,7 @@ func handle_inputs() -> void:
 	if Input.is_action_just_pressed("tab right"):
 		print("tab-right", scenesIndex)
 		tab = posmod((tab+1), tabCount)
-		scenesCount = _map_buildings["tile_set"].get_source(tab).get_alternative_tiles_count(Vector2i(0, 0))  
+		#scenesCount = _map_buildings["tile_set"].get_source(tab).get_alternative_tiles_count(Vector2i(0, 0))  
 		if (selected_menu+2)%2 == 0:
 			selected_menu = 1
 			$"../NinePatchRect".get_node("Label").text = "Machines"
