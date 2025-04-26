@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://hu8dcylc7sti"]
 
 [ext_resource type="Texture2D" uid="uid://bbr11dqlnwj7c" path="res://assets/textures/sprites/Lantern_case.png" id="1_rx0vn"]
-[ext_resource type="Texture2D" uid="uid://c2djy5e1pwn1o" path="res://assets/textures/point light.jpg" id="2_rx0vn"]
+[ext_resource type="Texture2D" uid="uid://nd6enmopt6pe" path="res://assets/textures/point light.png" id="2_rx0vn"]
 [ext_resource type="Texture2D" uid="uid://d0of4mj7pau5f" path="res://assets/textures/sprites/Lantern_interior.png" id="3_ngp4a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5j34s"]
@@ -18,6 +18,8 @@ texture = ExtResource("1_rx0vn")
 shape = SubResource("RectangleShape2D_5j34s")
 
 [node name="PointLight2D" type="PointLight2D" parent="Sprite2D/Area2D"]
+blend_mode = 2
+range_layer_max = 1
 shadow_enabled = true
 texture = ExtResource("2_rx0vn")
 
