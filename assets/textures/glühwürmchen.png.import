@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gfmu3q7jpavt"
-path="res://.godot/imported/glühwürmchen.png-4f40197cc4c259e41e9902a386be1eaf.ctex"
+uid="uid://bgmf7803031o0"
+path="res://.godot/imported/Glühwürmchen.png-400ea74e52a44d51786ab5da059a2911.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/glühwürmchen.png"
-dest_files=["res://.godot/imported/glühwürmchen.png-4f40197cc4c259e41e9902a386be1eaf.ctex"]
+source_file="res://assets/textures/Glühwürmchen.png"
+dest_files=["res://.godot/imported/Glühwürmchen.png-400ea74e52a44d51786ab5da059a2911.ctex"]
 
 [params]
 
