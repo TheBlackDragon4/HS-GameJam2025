@@ -81,11 +81,13 @@ zoom = Vector2(3, 3)
 
 [node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D/Camera2D"]
 scale = Vector2(0.347038, 0.347038)
-energy = 0.2
+energy = 0.5
+blend_mode = 2
 texture = ExtResource("3_i3pqv")
 texture_scale = 2.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+z_index = 10
 scale = Vector2(1e-05, 1e-05)
 sprite_frames = SubResource("SpriteFrames_qhqgy")
 frame_progress = 0.304614

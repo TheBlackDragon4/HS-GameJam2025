@@ -18,6 +18,7 @@ texture = ExtResource("1_rx0vn")
 shape = SubResource("RectangleShape2D_5j34s")
 
 [node name="PointLight2D" type="PointLight2D" parent="Sprite2D/Area2D"]
+shadow_enabled = true
 texture = ExtResource("2_rx0vn")
 
 [node name="InnerLightingSprite2D" type="Sprite2D" parent="Sprite2D"]

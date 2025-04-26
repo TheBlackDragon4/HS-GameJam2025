@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var _map1 = get_parent().get_parent().find_child("map1")
+@onready var _map_buildings = get_parent().get_parent().find_child("builds")
 
 @export var _movementspeed = 100
 
@@ -17,11 +17,10 @@ var scenesCount = 2
 
 #scan tile at px position and interact with it
 func _ready() -> void:
-	_map1 = get_parent().get_parent().find_child("map1")
-	tabCount = _map1["tile_set"].get_source_count()
-	scenesCount = _map1["tile_set"].get_source(0).get_alternative_tiles_count(Vector2i(0, 0)) 
+	tabCount = _map_buildings["tile_set"].get_source_count()
+	scenesCount = _map_buildings["tile_set"].get_source(0).get_alternative_tiles_count(Vector2i(0, 0)) 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	handle_movement()
 	handle_inputs()
 	
@@ -47,29 +46,25 @@ func handle_movement() -> void:
 func handle_inputs() -> void:
 	if Input.is_action_just_pressed("destroy"):
 		print("destroy")
-		_map1.set_cell(selected_tile, 0, Vector2i(0, 0))
+		_map_buildings.set_cell(selected_tile, 0, Vector2i(0, 0))
 	if Input.is_action_just_pressed("build"):
 		print("build")
-		_map1.set_cell(selected_tile, 0, Vector2i(0, 0), scenesIndex)
+		_map_buildings.set_cell(selected_tile, 0, Vector2i(0, 0), scenesIndex)
 	if Input.is_action_just_pressed("rotate"):
 		print("rotate")
 		
 	if Input.is_action_just_pressed("tab left"):
 		tab = posmod((tab-1), tabCount)
-		scenesCount = _map1["tile_set"].get_source(tab).get_alternative_tiles_count(Vector2i(0, 0)) 
+		scenesCount = _map_buildings["tile_set"].get_source(tab).get_alternative_tiles_count(Vector2i(0, 0)) 
 		scenesIndex = 1
-		print(scenesCount)
 	if Input.is_action_just_pressed("tab right"):
 		tab = posmod((tab+1), tabCount)
-		scenesCount = _map1["tile_set"].get_source(tab).get_alternative_tiles_count(Vector2i(0, 0))  
+		scenesCount = _map_buildings["tile_set"].get_source(tab).get_alternative_tiles_count(Vector2i(0, 0))  
 		scenesIndex = 1
-		print(scenesCount)
 	if Input.is_action_just_pressed("menu left"):
 		scenesIndex = posmod((scenesIndex-2), scenesCount)+1
-		print(scenesIndex)
 	if Input.is_action_just_pressed("menu right"):
 		scenesIndex = posmod((scenesIndex), scenesCount)+1
-		print(scenesIndex)
 
 		
 #build: place selected tile
