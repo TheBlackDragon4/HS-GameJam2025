@@ -15,6 +15,8 @@ var tabCount = 1
 var scenesIndex = 0
 var scenesCount = 2
 
+var orientation = 0 # 0 = left, 1 = right
+
 #scan tile at px position and interact with it
 func _ready() -> void:
 	tabCount = _map_buildings["tile_set"].get_source_count()
@@ -27,6 +29,13 @@ func _physics_process(_delta: float) -> void:
 func handle_movement() -> void:
 	motion.y = Input.get_action_strength("down") - Input.get_action_strength("up")
 	motion.x = Input.get_action_strength("right") - Input.get_action_strength("left")
+	
+	if motion.x == 1.0 and orientation == 0:
+		orientation = 1
+		$AnimatedSprite2D.flip_h = true
+	if motion.x == -1.0 and orientation == 1:
+		orientation = 0
+		$AnimatedSprite2D.flip_h = false
 	
 	velocity = motion.normalized() * _movementspeed
 	move_and_slide()
