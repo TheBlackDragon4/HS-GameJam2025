@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="HS-GameJam2025"
-run/main_scene="uid://dq6tvhqcy2aps"
+run/main_scene="uid://sbns2q18gdd6"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://assets/textures/icon.svg"
 
@@ -111,3 +111,8 @@ escape={
 [physics]
 
 2d/default_gravity=0.0
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

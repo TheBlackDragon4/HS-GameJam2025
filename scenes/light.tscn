@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcimtslontlab"]
+
+[ext_resource type="Texture2D" uid="uid://c2djy5e1pwn1o" path="res://assets/textures/point light.jpg" id="1_24oxn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eaa0b"]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_eaa0b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
+scale = Vector2(0.3, 0.3)
+energy = 0.2
+blend_mode = 2
+range_layer_max = 1
+texture = ExtResource("1_24oxn")
