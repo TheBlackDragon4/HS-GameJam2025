@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhb3gbgtdsbia"
-path="res://.godot/imported/blumenwiese.png-9f10596999ea98639ae1dba8f674ca93.ctex"
+uid="uid://bbr11dqlnwj7c"
+path="res://.godot/imported/Lantern_case.png-f32b845f82fb931a233a66c879f08d66.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/blumenwiese.png"
-dest_files=["res://.godot/imported/blumenwiese.png-9f10596999ea98639ae1dba8f674ca93.ctex"]
+source_file="res://assets/textures/sprites/Lantern_case.png"
+dest_files=["res://.godot/imported/Lantern_case.png-f32b845f82fb931a233a66c879f08d66.ctex"]
 
 [params]
 

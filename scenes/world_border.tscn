@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://drvg4dkmn8fv6"]
 
 [ext_resource type="Texture2D" uid="uid://bssu7pqnjhrd8" path="res://assets/textures/spritesheet_fog.png" id="1_gs6km"]
-[ext_resource type="Script" uid="uid://diuxhmsynjoyb" path="res://scenes/animated_sprite_2d.gd" id="2_sxw8n"]
+[ext_resource type="Script" uid="uid://diuxhmsynjoyb" path="res://scripts/animated_sprite_2d.gd" id="2_sxw8n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sxw8n"]
 atlas = ExtResource("1_gs6km")
@@ -80,13 +80,15 @@ size = Vector2(16, 16)
 [node name="Node2D" type="Node2D"]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
 polygon = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RigidBody2D"]
 sprite_frames = SubResource("SpriteFrames_lsgwp")
-frame_progress = 0.392752
+frame_progress = 0.761723
 script = ExtResource("2_sxw8n")
 
 [node name="Area2D" type="Area2D" parent="RigidBody2D/AnimatedSprite2D"]

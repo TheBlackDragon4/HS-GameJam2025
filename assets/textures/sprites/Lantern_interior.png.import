@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw5oux7d1oyf5"
-path="res://.godot/imported/holz.png-b54944b81eb00589c4bfa2a48c8a7499.ctex"
+uid="uid://d0of4mj7pau5f"
+path="res://.godot/imported/Lantern_interior.png-5ca043302ecf2558b1516d2b28d7a5ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/holz.png"
-dest_files=["res://.godot/imported/holz.png-b54944b81eb00589c4bfa2a48c8a7499.ctex"]
+source_file="res://assets/textures/sprites/Lantern_interior.png"
+dest_files=["res://.godot/imported/Lantern_interior.png-5ca043302ecf2558b1516d2b28d7a5ad.ctex"]
 
 [params]
 

@@ -1,280 +1,58 @@
-[gd_scene load_steps=28 format=4 uid="uid://sbns2q18gdd6"]
+[gd_scene load_steps=22 format=4 uid="uid://sbns2q18gdd6"]
 
 [ext_resource type="PackedScene" uid="uid://clwopr1x8gql0" path="res://scenes/TileMap.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://ql6yjbm5rt2o" path="res://scripts/world.gd" id="1_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://bktwhar36vufn" path="res://scenes/templates/building.tscn" id="4_71j4m"]
 [ext_resource type="PackedScene" uid="uid://hu8dcylc7sti" path="res://scenes/templates/building with light source.tscn" id="5_qfnet"]
-[ext_resource type="PackedScene" uid="uid://d2umixl5yovpe" path="res://scenes/templates/sand2.tscn" id="6_i7141"]
-[ext_resource type="Texture2D" uid="uid://dhb3gbgtdsbia" path="res://assets/textures/blumenwiese.png" id="6_q5onr"]
-[ext_resource type="PackedScene" uid="uid://crexey5nrj4q1" path="res://scenes/templates/sand.tscn" id="7_4mrxx"]
-[ext_resource type="Texture2D" uid="uid://dw5oux7d1oyf5" path="res://assets/textures/holz.png" id="7_jhx03"]
+[ext_resource type="Texture2D" uid="uid://dhb3gbgtdsbia" path="res://assets/textures/backgrounds/blumenwiese.png" id="6_q5onr"]
+[ext_resource type="Texture2D" uid="uid://dw5oux7d1oyf5" path="res://assets/textures/backgrounds/holz.png" id="7_jhx03"]
 [ext_resource type="PackedScene" uid="uid://b245af5i32bwl" path="res://scenes/collector.tscn" id="8_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://drvg4dkmn8fv6" path="res://scenes/world_border.tscn" id="8_dss4m"]
-[ext_resource type="Texture2D" uid="uid://dljojwqigg53f" path="res://assets/textures/icon.svg" id="8_o8fc1"]
-[ext_resource type="Texture2D" uid="uid://cqf07dgtfpc5w" path="res://assets/textures/pixil-frame-0.png" id="9_xo05s"]
-[ext_resource type="Texture2D" uid="uid://c2djy5e1pwn1o" path="res://assets/textures/point light.jpg" id="10_dss4m"]
-[ext_resource type="Texture2D" uid="uid://caa6n4d0h5o6m" path="res://assets/textures/sand.png" id="11_7t5mc"]
-[ext_resource type="Texture2D" uid="uid://brsc0t6lwsc66" path="res://assets/textures/Test_Lantern_16x16.png" id="12_lakw3"]
+[ext_resource type="Texture2D" uid="uid://caa6n4d0h5o6m" path="res://assets/textures/backgrounds/sand.png" id="11_7t5mc"]
 [ext_resource type="PackedScene" uid="uid://cqngyq22qcvt5" path="res://scenes/player.tscn" id="16_dss4m"]
+[ext_resource type="Texture2D" uid="uid://b83uh2ih7pfbv" path="res://assets/textures/backgrounds/sand_1.png" id="16_lakw3"]
+[ext_resource type="Texture2D" uid="uid://cctcsylsj4xal" path="res://assets/textures/backgrounds/sand_2.png" id="17_pm21f"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_i7141"]
+resource_name = "Buildings"
 scenes/1/scene = ExtResource("4_71j4m")
 scenes/2/scene = ExtResource("5_qfnet")
-scenes/3/scene = ExtResource("6_i7141")
-scenes/4/scene = ExtResource("7_4mrxx")
-scenes/5/scene = ExtResource("8_4mrxx")
-scenes/6/scene = ExtResource("8_dss4m")
+scenes/3/scene = ExtResource("8_dss4m")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pm21f"]
-texture = ExtResource("6_q5onr")
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2lf6f"]
-texture = ExtResource("7_jhx03")
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7iits"]
-texture = ExtResource("8_o8fc1")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-4:7/0 = 0
-5:7/0 = 0
-6:7/0 = 0
-7:7/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oo54l"]
-texture = ExtResource("9_xo05s")
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kpybi"]
-texture = ExtResource("10_dss4m")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-9:0/0 = 0
-10:0/0 = 0
-11:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-9:1/0 = 0
-10:1/0 = 0
-11:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-9:2/0 = 0
-10:2/0 = 0
-11:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-8:3/0 = 0
-9:3/0 = 0
-10:3/0 = 0
-11:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-8:4/0 = 0
-9:4/0 = 0
-10:4/0 = 0
-11:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-8:5/0 = 0
-9:5/0 = 0
-10:5/0 = 0
-11:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-8:6/0 = 0
-9:6/0 = 0
-10:6/0 = 0
-11:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-4:7/0 = 0
-5:7/0 = 0
-6:7/0 = 0
-7:7/0 = 0
-8:7/0 = 0
-9:7/0 = 0
-10:7/0 = 0
-11:7/0 = 0
-0:8/0 = 0
-1:8/0 = 0
-2:8/0 = 0
-3:8/0 = 0
-4:8/0 = 0
-5:8/0 = 0
-6:8/0 = 0
-7:8/0 = 0
-8:8/0 = 0
-9:8/0 = 0
-10:8/0 = 0
-11:8/0 = 0
-0:9/0 = 0
-1:9/0 = 0
-2:9/0 = 0
-3:9/0 = 0
-4:9/0 = 0
-5:9/0 = 0
-6:9/0 = 0
-7:9/0 = 0
-8:9/0 = 0
-9:9/0 = 0
-10:9/0 = 0
-11:9/0 = 0
-0:10/0 = 0
-1:10/0 = 0
-2:10/0 = 0
-3:10/0 = 0
-4:10/0 = 0
-5:10/0 = 0
-6:10/0 = 0
-7:10/0 = 0
-8:10/0 = 0
-9:10/0 = 0
-10:10/0 = 0
-11:10/0 = 0
-0:11/0 = 0
-1:11/0 = 0
-2:11/0 = 0
-3:11/0 = 0
-4:11/0 = 0
-5:11/0 = 0
-6:11/0 = 0
-7:11/0 = 0
-8:11/0 = 0
-9:11/0 = 0
-10:11/0 = 0
-11:11/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ctatt"]
-texture = ExtResource("11_7t5mc")
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xgqkh"]
-texture = ExtResource("12_lakw3")
-0:0/0 = 0
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_jhx03"]
+resource_name = "Machines"
+scenes/1/scene = ExtResource("8_4mrxx")
 
 [sub_resource type="TileSet" id="TileSet_tlwt5"]
 sources/0 = SubResource("TileSetScenesCollectionSource_i7141")
-sources/1 = SubResource("TileSetAtlasSource_pm21f")
-sources/2 = SubResource("TileSetAtlasSource_2lf6f")
-sources/3 = SubResource("TileSetAtlasSource_7iits")
-sources/4 = SubResource("TileSetAtlasSource_oo54l")
-sources/5 = SubResource("TileSetAtlasSource_kpybi")
-sources/6 = SubResource("TileSetAtlasSource_ctatt")
-sources/7 = SubResource("TileSetAtlasSource_xgqkh")
+sources/1 = SubResource("TileSetScenesCollectionSource_jhx03")
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_q5onr"]
-scenes/1/scene = ExtResource("5_qfnet")
-scenes/2/scene = ExtResource("4_71j4m")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_munwf"]
+texture = ExtResource("6_q5onr")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ts3gi"]
+texture = ExtResource("7_jhx03")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0nbtd"]
+texture = ExtResource("11_7t5mc")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_37qwj"]
+texture = ExtResource("16_lakw3")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_navra"]
+texture = ExtResource("17_pm21f")
+0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_jhx03"]
-sources/0 = SubResource("TileSetScenesCollectionSource_q5onr")
+sources/1 = SubResource("TileSetAtlasSource_munwf")
+sources/2 = SubResource("TileSetAtlasSource_ts3gi")
+sources/3 = SubResource("TileSetAtlasSource_0nbtd")
+sources/4 = SubResource("TileSetAtlasSource_37qwj")
+sources/5 = SubResource("TileSetAtlasSource_navra")
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_tlwt5")
@@ -286,8 +64,5 @@ tile_set = SubResource("TileSet_tlwt5")
 [node name="map2" parent="." instance=ExtResource("1_f3sb7")]
 z_index = 1
 tile_set = SubResource("TileSet_jhx03")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("9_xo05s")
 
 [node name="player" parent="." instance=ExtResource("16_dss4m")]

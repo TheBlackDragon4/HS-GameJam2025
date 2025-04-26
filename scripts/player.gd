@@ -11,11 +11,15 @@ var motion = Vector2()
 var selected_tile = Vector2i(0,0)
 
 var tab = 0
-var index = 1
+var tabCount = 1
+var scenesIndex = 0
+var scenesCount = 2
 
 #scan tile at px position and interact with it
 func _ready() -> void:
 	_map1 = get_parent().get_parent().find_child("map1")
+	tabCount = _map1["tile_set"].get_source_count()
+	scenesCount = _map1["tile_set"].get_source(0).get_alternative_tiles_count(Vector2i(0, 0)) 
 
 func _physics_process(delta: float) -> void:
 	handle_movement()
@@ -46,17 +50,26 @@ func handle_inputs() -> void:
 		_map1.set_cell(selected_tile, 0, Vector2i(0, 0))
 	if Input.is_action_just_pressed("build"):
 		print("build")
-		_map1.set_cell(selected_tile, 0, Vector2i(0, 0), 2)
+		_map1.set_cell(selected_tile, 0, Vector2i(0, 0), scenesIndex)
 	if Input.is_action_just_pressed("rotate"):
 		print("rotate")
+		
 	if Input.is_action_just_pressed("tab left"):
-		print("rotate")
+		tab = posmod((tab-1), tabCount)
+		scenesCount = _map1["tile_set"].get_source(tab).get_alternative_tiles_count(Vector2i(0, 0)) 
+		scenesIndex = 1
+		print(scenesCount)
 	if Input.is_action_just_pressed("tab right"):
-		print("rotate")
+		tab = posmod((tab+1), tabCount)
+		scenesCount = _map1["tile_set"].get_source(tab).get_alternative_tiles_count(Vector2i(0, 0))  
+		scenesIndex = 1
+		print(scenesCount)
 	if Input.is_action_just_pressed("menu left"):
-		print("rotate")
+		scenesIndex = posmod((scenesIndex-2), scenesCount)+1
+		print(scenesIndex)
 	if Input.is_action_just_pressed("menu right"):
-		print("rotate")
+		scenesIndex = posmod((scenesIndex), scenesCount)+1
+		print(scenesIndex)
 
 		
 #build: place selected tile
