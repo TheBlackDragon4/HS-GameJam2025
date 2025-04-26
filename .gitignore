@@ -1,3 +1,17 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+/builds
+# Apple stuff..
+.DS_Store
+.DS_STORE
+# Windows stuff..
+Thumbs.db
+.vscode
+# Linux stuff..
+*~
+# Godot 3 specific ignores
+.import/
+
+
+
