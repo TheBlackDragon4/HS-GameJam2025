@@ -1,12 +1,14 @@
 extends CharacterBody2D
 
-var _movementspeed = 100
+@onready var _map1 = get_parent().get_parent().find_child("map1")
+
+@export var _movementspeed = 100
+
 var _grid_size = 16
 
 var sprite_position = Vector2()
 var motion = Vector2()
 var selected_tile = Vector2i(0,0)
-var _map1 
 
 var tab = 0
 var index = 1

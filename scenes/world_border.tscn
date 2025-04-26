@@ -86,7 +86,7 @@ polygon = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RigidBody2D"]
 sprite_frames = SubResource("SpriteFrames_lsgwp")
-frame_progress = 0.248104
+frame_progress = 0.392752
 script = ExtResource("2_sxw8n")
 
 [node name="Area2D" type="Area2D" parent="RigidBody2D/AnimatedSprite2D"]
