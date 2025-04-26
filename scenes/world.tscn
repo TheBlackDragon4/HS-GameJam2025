@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://sbns2q18gdd6"]
+[gd_scene load_steps=26 format=4 uid="uid://sbns2q18gdd6"]
 
 [ext_resource type="PackedScene" uid="uid://clwopr1x8gql0" path="res://scenes/TileMap.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://ql6yjbm5rt2o" path="res://scripts/world.gd" id="1_tlwt5"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://b245af5i32bwl" path="res://scenes/collector.tscn" id="8_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://drvg4dkmn8fv6" path="res://scenes/world_border.tscn" id="8_dss4m"]
 [ext_resource type="Texture2D" uid="uid://caa6n4d0h5o6m" path="res://assets/textures/backgrounds/sand.png" id="11_7t5mc"]
+[ext_resource type="Texture2D" uid="uid://dljojwqigg53f" path="res://assets/textures/icon.svg" id="14_o8fc1"]
+[ext_resource type="PackedScene" uid="uid://c0dm6ua1pu1g0" path="res://scenes/templates/Particles_Supplier.tscn" id="14_xo05s"]
 [ext_resource type="PackedScene" uid="uid://cqngyq22qcvt5" path="res://scenes/player.tscn" id="16_dss4m"]
 [ext_resource type="Texture2D" uid="uid://b83uh2ih7pfbv" path="res://assets/textures/backgrounds/sand_1.png" id="16_lakw3"]
 [ext_resource type="Texture2D" uid="uid://cctcsylsj4xal" path="res://assets/textures/backgrounds/sand_2.png" id="17_pm21f"]
@@ -77,3 +79,27 @@ tile_set = SubResource("TileSet_jhx03")
 [node name="player" parent="." instance=ExtResource("16_dss4m")]
 
 [node name="FallbackBackground" type="Sprite2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Particles"]]
+position = Vector2(-38, 20)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("14_o8fc1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." groups=["Particles"]]
+position = Vector2(57, -48)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("14_o8fc1")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." groups=["Particles"]]
+position = Vector2(36, 18)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("14_o8fc1")
+
+[node name="CPUParticles2D" parent="." node_paths=PackedStringArray("source") instance=ExtResource("14_xo05s")]
+position = Vector2(126, -18)
+direction = Vector2(0, 0)
+spread = 0.0
+gravity = Vector2(0, 0)
+source = NodePath("../Sprite2D")
+velocity = 50.0
+range = 200.0
