@@ -15,6 +15,7 @@ Programmed source code for the third official HS-Coburg GameJam 2025
 - [ ] Beacon (Biom-Laterne die neue Strukturen freischaltet. Hierbei als "*Questabgabe*" um neue Strukturen zu bekommen)
 - [ ] Prism shiftet Frequenz / Farbe des Lichts (Anfang evtl. fix, später nach Value)
 - [ ] Kanone, kann große Mengen Licht schicken (Evtl. Zielposition irgendwie auswählen oder so)
+- [ ] Scallierung
 
 ## Gebäude / -Sprites
 - [ ] Gui 
