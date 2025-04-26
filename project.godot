@@ -30,6 +30,10 @@ window/stretch/mode="canvas_items"
 
 enabled=PackedStringArray("res://addons/modular-settings-menu/plugin.cfg")
 
+[global_group]
+
+Particles=""
+
 [input]
 
 up={

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0dm6ua1pu1g0"]
+
+[ext_resource type="Script" uid="uid://bw5wdtuymturw" path="res://scenes/templates/particles_supplier.gd" id="1_becfb"]
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+script = ExtResource("1_becfb")
+
+[connection signal="ready" from="." to="." method="_on_ready"]
