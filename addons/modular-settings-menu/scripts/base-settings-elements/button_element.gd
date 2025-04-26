@@ -32,7 +32,7 @@ func create_element_panel() -> void:
 	
 	# Check if the element panel exists
 	if not ElementPanelsRef.find_child(ElementPanelRef.name):
-		# Give a reference of the element
+		# Give a reference of the elementf
 		ElementPanelRef.PanelOwnerRef = self
 		ElementPanelRef.hide()
 		# Add the panel to the element panels list

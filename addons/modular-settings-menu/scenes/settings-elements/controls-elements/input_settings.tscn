@@ -8,10 +8,21 @@ script/source = "extends ButtonElement
 
 ##List of actions to make remappable and how the name they should display.
 @export var ACTION_LIST_: Dictionary = {
-	\"ui_up\": \"Up\",
-	\"ui_down\": \"Down\",
-	\"ui_left\": \"Left\",
-	\"ui_right\": \"Right\",
+	\"up\": \"Up\",
+	\"down\": \"Down\",
+	\"left\": \"Left\",
+	\"right\": \"Right\",
+	\"interact\": \"Interact\",
+	\"build\": \"Build\",
+	\"rotate\": \"Rotate\",
+	\"destroy\": \"Destroy\",
+	\"menu left\": \"Menu left\",
+	\"menu right\": \"Menu right\",
+	\"tab left\": \"Tab left\",
+	\"tab right\": \"Tab right\",
+	\"flip\": \"Flip\",
+	\"hud\": \"HUD\",
+	\"escape\": \"Menu\"
 }
 
 # Path to the settings save file
@@ -19,6 +30,9 @@ var DATA_FOLDER: String = SettingsDataManager.DATA_FOLDER
 const FILE_NAME: String = \"keybinds\"
 const FILE_EXTENSION: String = \".json\"
 var PATH: String = DATA_FOLDER + \"/\" + FILE_NAME + FILE_EXTENSION
+var PATH_Arcade: String = \"res://ui/binds/keybinds_arcade.json\"
+
+var arcade_mode: bool = false
 
 # Currently stored input data
 var inputSettingsData_: Dictionary
@@ -42,6 +56,8 @@ func _ready():
 
 # Loads the saved/default values of the element
 func load_settings() -> void:
+	print(\"Load key bindings: \", PATH, \" noSafeFile: \", noSaveFile)
+	
 	# Get the current value for the element
 	if noSaveFile:
 		# Get the events for the remappable actions from the project settings
@@ -75,7 +91,6 @@ func apply_settings() -> void:
 	# Assign the events for the remappable actions
 	ElementPanelRef.update_action_events(inputSettingsData_)
 
-
 # Called to update the input settings data
 func panel_settings_changed(newValue_: Dictionary) -> void:
 	inputSettingsData_ = newValue_.duplicate()
@@ -84,6 +99,7 @@ func panel_settings_changed(newValue_: Dictionary) -> void:
 
 # Called to save the input settings
 func save_input_settings() -> void:
+	print(\"Save\")
 	var file := FileAccess.open(PATH, FileAccess.WRITE)
 	var data_: Dictionary = {}
 	
@@ -127,6 +143,7 @@ func get_input_settings() -> void:
 
 # Used for verifying the integrity of the save file
 func verify_settings_data(data_: Dictionary) -> void:
+	
 	# Itterate through all the retrieved data
 	for input in data_:
 		# Check if the action exists
@@ -148,18 +165,45 @@ func verify_settings_data(data_: Dictionary) -> void:
 	
 	# Itterate through all the expected actions
 	for action in ACTION_LIST_:
-		if not data_.has(action):
+		# added condition so \"key\" has to be included
+		if not data_.has(action) || (data_[action].has(\"key\") and data_[action][\"key\"] == 0):
 			data_[action] = InputMap.action_get_events(action)[0]
 			invalidSaveFile = true
 			push_warning(\"Input action is missing: \", action)
+
+
+# Sollte erst bei Apply aufgerufen werden
+func set_arcade(state: bool):
+	print(\"Set arcade: \", state)
+	
+	# Prevent path swapping when the state didn't really change
+	if state == arcade_mode:
+		return
+	arcade_mode = state
+	
+	# Swap paths
+	var tmp: String = PATH
+	PATH = PATH_Arcade
+	PATH_Arcade = tmp
+	
+	print(PATH)
+	
+	if not FileAccess.file_exists(PATH):
+		noSaveFile = true
+	
+	load_settings()
 "
 
 [node name="InputSettings" type="Button"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = -2.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Input Settings"
+text = "Key Bindings"
 script = SubResource("GDScript_te2ja")
 ElementPanelScene = ExtResource("1_6pc66")

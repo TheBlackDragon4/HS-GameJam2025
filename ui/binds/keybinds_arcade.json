@@ -1,0 +1,62 @@
+{
+	"up": {
+		"type": "keyboard",
+		"key": 0
+	},
+	"down": {
+		"type": "keyboard",
+		"key": 0
+	},
+	"left": {
+		"type": "keyboard",
+		"key": 0
+	},
+	"right": {
+		"type": "keyboard",
+		"key": 0
+	},
+	"interact": {
+		"type": "mouse",
+		"button": 1
+	},
+	"build": {
+		"type": "mouse",
+		"button": 2
+	},
+	"rotate": {
+		"type": "keyboard",
+		"key": 0
+	},
+	"destroy": {
+		"type": "keyboard",
+		"key": 0
+	},
+	"menu left": {
+		"type": "keyboard",
+		"key": 0
+	},
+	"menu right": {
+		"type": "keyboard",
+		"key": 0
+	},
+	"tab left": {
+		"type": "keyboard",
+		"key": 0
+	},
+	"tab right": {
+		"type": "keyboard",
+		"key": 0
+	},
+	"flip": {
+		"type": "keyboard",
+		"key": 0
+	},
+	"hud": {
+		"type": "keyboard",
+		"key": 0
+	},
+	"escape": {
+		"type": "keyboard",
+		"key": 0
+	}
+}

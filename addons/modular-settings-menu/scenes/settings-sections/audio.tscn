@@ -68,7 +68,9 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="MusicVolume" parent="MarginContainer/ScrollContainer/MarginContainer/ElementList/VolumeSettings/SubSectionElements" instance=ExtResource("3_v08xa")]
+visible = false
 layout_mode = 2
 
 [node name="SFXVolume" parent="MarginContainer/ScrollContainer/MarginContainer/ElementList/VolumeSettings/SubSectionElements" instance=ExtResource("4_j1ron")]
+visible = false
 layout_mode = 2

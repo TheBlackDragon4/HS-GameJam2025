@@ -48,6 +48,8 @@ func on_back_button_pressed() -> void:
 	else:
 		# Display the discard changes popup
 		display_discard_changes(self)
+		
+	emit_signal("settings_menu_closed")
 
 
 func on_apply_button_pressed() -> void:
