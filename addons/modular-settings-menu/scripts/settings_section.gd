@@ -22,6 +22,8 @@ var settingsCache_: Dictionary
 var changedElements_: Array[String]
 
 
+
+
 func _enter_tree() -> void:
 	SettingsMenuRef = owner
 
@@ -39,6 +41,9 @@ func _ready():
 	if SettingsDataManager.noSaveFile:
 		# Add the section to the settings data dictionary
 		SettingsDataManager.settingsData_[IDENTIFIER] = {}
+	
+
+
 
 
 ## Called when opening the settings menu to fill the settings cache.
@@ -121,3 +126,9 @@ func discard_changes() -> void:
 		
 		# Clear the changed elements array
 		changedElements_.clear()
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		if event.is_action_pressed("ui_down"):
+			pass
+		if event.is_action_pressed("ui_up"):
+			pass
