@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctgafr46hl2w8"]
+
+[ext_resource type="PackedScene" uid="uid://rw7gdui8lu3n" path="res://addons/EasyMenus/Scenes/pause_menu.tscn" id="1_digwd"]
+[ext_resource type="Script" uid="uid://p4gkjp1frbnv" path="res://ui/default_ui.gd" id="1_fw7mt"]
+
+[node name="DefaultUiElement" type="CanvasLayer"]
+script = ExtResource("1_fw7mt")
+
+[node name="PauseMenu" parent="." instance=ExtResource("1_digwd")]
+unique_name_in_owner = true
+visible = false
+
+[connection signal="resume" from="PauseMenu" to="." method="_on_pause_menu_resume"]

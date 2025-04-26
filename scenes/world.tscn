@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=4 uid="uid://sbns2q18gdd6"]
+[gd_scene load_steps=25 format=4 uid="uid://sbns2q18gdd6"]
 
 [ext_resource type="PackedScene" uid="uid://clwopr1x8gql0" path="res://scenes/TileMap.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://ql6yjbm5rt2o" path="res://scripts/world.gd" id="1_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://ctgafr46hl2w8" path="res://ui/defaultUIElement.tscn" id="2_jhx03"]
 [ext_resource type="PackedScene" uid="uid://bktwhar36vufn" path="res://scenes/templates/building.tscn" id="4_71j4m"]
 [ext_resource type="PackedScene" uid="uid://hu8dcylc7sti" path="res://scenes/templates/building with light source.tscn" id="5_qfnet"]
 [ext_resource type="Texture2D" uid="uid://dhb3gbgtdsbia" path="res://assets/textures/backgrounds/blumenwiese.png" id="6_q5onr"]
@@ -63,6 +64,9 @@ sources/6 = SubResource("TileSetAtlasSource_munwf")
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_tlwt5")
+
+[node name="DefaultUiElement" parent="." instance=ExtResource("2_jhx03")]
+world_hidden_mouse = true
 
 [node name="builds" parent="." instance=ExtResource("1_f3sb7")]
 tile_map_data = PackedByteArray("AAD8/wAAAAAAAAAAAgAAAP3/AAAAAAAAAgABAAIAAAAAAAAAAgACAP//AAAAAAAAAgACAAAAAAAAAAAAAgA=")

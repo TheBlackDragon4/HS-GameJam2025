@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dq6tvhqcy2aps"]
 
 [ext_resource type="Script" uid="uid://djft108icumlx" path="res://addons/EasyMenus/Scripts/main_menu_controller.gd" id="1_lbw7r"]
-[ext_resource type="PackedScene" path="res://ui/credits.tscn" id="2_ahamq"]
+[ext_resource type="PackedScene" uid="uid://kl1rhxon4i4u" path="res://ui/credits.tscn" id="2_ahamq"]
 [ext_resource type="PackedScene" uid="uid://qlskttl1wjr7" path="res://addons/EasyMenus/Scenes/options_menu.tscn" id="2_pwqpr"]
 [ext_resource type="Script" uid="uid://xaeldb0j3s5" path="res://ui/credits.gd" id="3_hv8pp"]
 [ext_resource type="PackedScene" uid="uid://px6a2dg8cawb" path="res://addons/modular-settings-menu/scenes/settings.tscn" id="3_slls3"]
