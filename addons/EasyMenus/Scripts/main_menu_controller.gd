@@ -9,6 +9,7 @@ signal start_game_pressed
 
 func _ready():
 	start_game_button.grab_focus()
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func quit():
 	get_tree().quit()
@@ -35,7 +36,7 @@ func close_credits():
 
 func _on_start_game_button_pressed():
 	emit_signal("start_game_pressed")
-	get_tree().change_scene_to_file("res://scenes/Main.tscn")
+	get_tree().change_scene_to_file("res://scenes/world.tscn")
 
 
 func _on_credits_button_pressed() -> void:

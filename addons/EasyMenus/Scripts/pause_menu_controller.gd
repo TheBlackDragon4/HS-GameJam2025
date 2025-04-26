@@ -40,7 +40,7 @@ func _on_quit_button_pressed():
 func _on_back_to_menu_button_pressed():
 	close_pause_menu()
 	emit_signal("back_to_main_pressed")
-	get_tree().change_scene_to_file("res://gui/main.tscn")
+	get_tree().change_scene_to_file("res://addons/EasyMenus/Scenes/main_menu.tscn")
 
 func _input(event):
 	if (event.is_action_pressed("ui_cancel")) and visible and !options_menu.visible:

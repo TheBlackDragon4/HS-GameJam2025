@@ -12,3 +12,4 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Time.get_ticks_msec() < maxTime:
 		Input.warp_mouse(screenSize/2)
+	
