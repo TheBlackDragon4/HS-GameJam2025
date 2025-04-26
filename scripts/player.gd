@@ -31,6 +31,61 @@ func _physics_process(delta: float) -> void:
 	sprite_position.y = selected_tile.y * grid_size + grid_size*.5
 	
 	$"../Sprite2D".position = sprite_position
+	# selected_tile = Vector2(position.x, position.y)# position - position % grid_size
+	#
+#func _ready():	
+	#print(typeof(get_parent().get_node("map1")))
+	#get_parent().get_node("map1").set_cell(Vector2(-2, -2), 1, Vector2(-2, -2))
+
+var x = 0
+var y = 0
+
+func _process(delta):
+	if Input.is_action_just_pressed("up"):
+		print(get_parent().get_node("map1").get_cell_tile_data(Vector2(x, y)))
+		y -= 1
+		#get_parent().get_node("map1").set_cell(Vector2(x, y), 0, Vector2(x, y))
+		print(x, " ", y)
+		#get_parent().get_node("map1").set_cell(Vector2(x, y), 1, Vector2(x, y), 2)
+	if Input.is_action_just_pressed("right"):
+		print(get_parent().get_node("map1").get_cell_tile_data(Vector2(x, y)))
+		x += 1
+		#get_parent().get_node("map1").set_cell(Vector2(x, y), 0, Vector2(x, y))
+		print(x, " ", y)
+		#get_parent().get_node("map1").set_cell(Vector2(x, y), 1, Vector2(x, y), 2)
+	if Input.is_action_just_pressed("down"):
+		print(get_parent().get_node("map1").get_cell_tile_data(Vector2(x, y)))
+		y += 1
+		#get_parent().get_node("map1").set_cell(Vector2(x, y), 0, Vector2(x, y))
+		#ö
+		#get_parent().get_node("map1").set_cell(Vector2(x, y), 1, Vector2(x, y), 2)
+		print(x, " ", y)
+	if Input.is_action_just_pressed("left"):
+		print(get_parent().get_node("map1").get_cell_tile_data(Vector2(x, y)))
+		x -= 1
+		#get_parent().get_node("map1").set_cell(Vector2i(x, y), 1, Vector2i(0, 0), 2)
+		print(x, " ", y)
+	
+	#if Input.is_action_just_pressed("rotate"):
+		#print("Rotate")
+		##get_parent().get_node("map1").set_cell(Vector2(x, y), 0, Vector2(x, y), 1)
+		#get_parent().get_node("map1").set_cell(Vector2i(x, y), 0, Vector2i(0, 0), 1)
+	
+	if Input.is_action_just_pressed("build"):
+		print("Rotate")
+		#get_parent().get_node("map1").set_cell(Vector2(x, y), 0, Vector2(x, y), 1)
+		get_parent().get_node("map1").set_cell(Vector2i(x, y), 0, Vector2i(0, 0), 2)
+		#get_parent().get_node("map1").set_cell(Vector2(x, y), 1, Vector2(0, 0), 1)
+		#get_parent().get_node("map1").place_scene
+		#print(get_parent().get_node("map1").get_cell_source_id(Vector2(x, y)))
+		
+		
+		# Move right.
+	#var build_tile = local_to_map()
+	#set_cel
+	#print(get_parent().get_node("map1").get_cell_source_id(Vector2(-2, -2)))
+	#get_cell_source_id
+	#print(selected_tile)
 	
 	$Area2D.get_overlapping_bodies()
 	
