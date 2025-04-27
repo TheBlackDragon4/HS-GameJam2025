@@ -38,8 +38,8 @@ enabled=PackedStringArray("res://addons/modular-settings-menu/plugin.cfg")
 Machines=""
 Absorb=""
 Light=""
-Resource=""
 Interact=""
+Resource=""
 Block=""
 
 [input]
