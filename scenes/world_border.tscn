@@ -1,7 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://drvg4dkmn8fv6"]
+[gd_scene load_steps=16 format=3 uid="uid://drvg4dkmn8fv6"]
 
 [ext_resource type="Texture2D" uid="uid://bssu7pqnjhrd8" path="res://assets/textures/spritesheet_fog.png" id="1_gs6km"]
-[ext_resource type="Script" uid="uid://diuxhmsynjoyb" path="res://scripts/animated_sprite_2d.gd" id="2_sxw8n"]
+[ext_resource type="Script" path="res://scripts/animated_sprite_2d.gd" id="2_sxw8n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sxw8n"]
 atlas = ExtResource("1_gs6km")
@@ -39,6 +39,14 @@ region = Rect2(0, 112, 16, 16)
 atlas = ExtResource("1_gs6km")
 region = Rect2(0, 128, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsgwp"]
+atlas = ExtResource("1_gs6km")
+region = Rect2(0, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npryq"]
+atlas = ExtResource("1_gs6km")
+region = Rect2(0, 160, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_lsgwp"]
 animations = [{
 "frames": [{
@@ -68,10 +76,16 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bx2dm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsgwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npryq")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5j34s"]
