@@ -1,39 +1,46 @@
 [gd_scene load_steps=8 format=3 uid="uid://bskqe2w845nw8"]
 
 [ext_resource type="Script" uid="uid://h4jqsk5s6ip1" path="res://scripts/machines/mirror.gd" id="1_6n0f3"]
-[ext_resource type="Texture2D" uid="uid://cxnc1st13gyl" path="res://assets/textures/sprites/machines/Mirror/Mirror_right.png" id="2_xnl6s"]
-[ext_resource type="Texture2D" uid="uid://b1jaflyxwacue" path="res://assets/textures/sprites/machines/Mirror/Mirror_down.png" id="3_p0x15"]
-[ext_resource type="Texture2D" uid="uid://q66d1fgeomod" path="res://assets/textures/sprites/machines/Mirror/Mirror_left.png" id="4_amwwc"]
-[ext_resource type="Texture2D" uid="uid://btbaevverrucy" path="res://assets/textures/sprites/machines/Mirror/Mirror_up.png" id="5_1ntfw"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6fmf"]
+[ext_resource type="Texture2D" uid="uid://dwh0upx3f5tfg" path="res://assets/textures/sprites/machines/Mirror/Mirror_down_left.png" id="2_ltx65"]
+[ext_resource type="Texture2D" uid="uid://p27mxwkxaiqh" path="res://assets/textures/sprites/machines/Mirror/Mirror_down_right.png" id="3_qda8j"]
+[ext_resource type="Texture2D" uid="uid://badc5a4qji143" path="res://assets/textures/sprites/machines/Mirror/Mirror_top_right.png" id="4_xnl6s"]
+[ext_resource type="Texture2D" uid="uid://2s43xg6mfkvs" path="res://assets/textures/sprites/machines/Mirror/Mirror_top_left.png" id="5_p0x15"]
+[ext_resource type="Script" uid="uid://dyo5ehmhr73dc" path="res://scenes/machines/mirror2.gd" id="6_ltx65"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ab70d"]
 
-[node name="rootNode" type="Node2D" node_paths=PackedStringArray("collision_box", "sprite")]
-script = ExtResource("1_6n0f3")
-sprite_right = ExtResource("2_xnl6s")
-sprite_down = ExtResource("3_p0x15")
-sprite_left = ExtResource("4_amwwc")
-sprite_up = ExtResource("5_1ntfw")
-collision_box = NodePath("RigidBody2D/CollisionShape2D")
-speed = 100.0
-spawn_distance = 15.0
-sprite = NodePath("RigidBody2D/Sprite2D")
+[node name="rootNode" type="Node2D"]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." groups=["Machines"]]
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Node2D" node_paths=PackedStringArray("node2D_rotate", "sprite") groups=["Machines"]]
 freeze = true
+script = ExtResource("1_6n0f3")
+sprite_right = ExtResource("4_xnl6s")
+sprite_down = ExtResource("3_qda8j")
+sprite_left = ExtResource("2_ltx65")
+sprite_up = ExtResource("5_p0x15")
+node2D_rotate = NodePath("..")
+sprite = NodePath("../../Sprite2D")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-scale = Vector2(0.624173, 0.624173)
-shape = SubResource("RectangleShape2D_o6fmf")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/RigidBody2D"]
+position = Vector2(-1, -1)
+polygon = PackedVector2Array(-3, -4, 6, 5, 3, 5, -3, -1)
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" groups=["Particles"]]
+[node name="Back_Side_Body2D" type="RigidBody2D" parent="Node2D/RigidBody2D" groups=["Absorb"]]
+freeze = true
+script = ExtResource("6_ltx65")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/RigidBody2D/Back_Side_Body2D"]
+position = Vector2(-2, 0)
+polygon = PackedVector2Array(-3, -4, -3, -1, 3, 5, 6, 5, 7, 4, 5, 4, -2, -3, -2, -5)
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Particles"]]
 texture_filter = 1
-texture = ExtResource("2_xnl6s")
+texture = ExtResource("3_qda8j")
 
-[node name="Area2D" type="Area2D" parent="RigidBody2D/Sprite2D"]
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Sprite2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
 scale = Vector2(0.667034, 0.667034)
 shape = SubResource("RectangleShape2D_ab70d")

@@ -33,6 +33,7 @@ scenes/1/scene = ExtResource("4_xgqkh")
 scenes/2/scene = ExtResource("5_munwf")
 scenes/3/scene = ExtResource("6_ts3gi")
 scenes/4/scene = ExtResource("7_0nbtd")
+scenes/5/scene = ExtResource("11_fh13f")
 
 [sub_resource type="GDScript" id="GDScript_luhhm"]
 script/source = "extends Node2D
@@ -113,7 +114,6 @@ resource_name = "Machines"
 scenes/1/scene = ExtResource("8_37qwj")
 scenes/2/scene = ExtResource("9_navra")
 scenes/3/scene = SubResource("PackedScene_fh13f")
-scenes/4/scene = ExtResource("11_fh13f")
 scenes/5/scene = ExtResource("12_rup4s")
 
 [sub_resource type="TileSet" id="TileSet_tlwt5"]
