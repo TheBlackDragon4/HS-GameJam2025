@@ -15,6 +15,7 @@ polygon = PackedVector2Array(-8.25507, -11.1556, -8.25507, 11.1556, 8.25507, 11.
 [node name="Node2D" type="Node2D"]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." groups=["Block"]]
+freeze = true
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
 texture_filter = 1

@@ -1,7 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://b0n3bd0sdpksi"]
+[gd_scene load_steps=13 format=3 uid="uid://b0n3bd0sdpksi"]
 
 [ext_resource type="Texture2D" uid="uid://drx7yxmker0k7" path="res://assets/textures/Stream_curve.png" id="1_605fm"]
-[ext_resource type="Script" uid="uid://diuxhmsynjoyb" path="res://scripts/animated_sprite_2d.gd" id="2_u5a1j"]
+[ext_resource type="Script" path="res://scripts/animated_sprite_2d.gd" id="2_u5a1j"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_605fm"]
+light_mode = 2
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_u5a1j"]
+light_mode = 2
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u5a1j"]
 atlas = ExtResource("1_605fm")
@@ -59,6 +65,7 @@ size = Vector2(16, 16)
 [node name="Node2D" type="Node2D"]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
+material = SubResource("CanvasItemMaterial_605fm")
 collision_layer = 3
 collision_mask = 3
 
@@ -66,6 +73,7 @@ collision_mask = 3
 polygon = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RigidBody2D"]
+material = SubResource("CanvasItemMaterial_u5a1j")
 sprite_frames = SubResource("SpriteFrames_lsgwp")
 frame_progress = 0.752249
 script = ExtResource("2_u5a1j")
