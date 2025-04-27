@@ -41,6 +41,7 @@ func fire(direction, sign, col, scale:float = 1) -> void:
 func interact(direction, color):
 	var dot = direction.dot(-1 * Vector2(1,0).rotated(rotation))
 	var sign = sign(dot)
+	print(dot, ",  ", sign)
 	#print(dot)
 	if abs(dot)>.9:
 		if color.r:

@@ -13,6 +13,7 @@ size = Vector2(14, 14)
 [node name="Node2D" type="Node2D"]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." node_paths=PackedStringArray("pointlight") groups=["Absorb"]]
+freeze = true
 script = ExtResource("1_jjyyg")
 pointlight = NodePath("PointLight2D")
 
