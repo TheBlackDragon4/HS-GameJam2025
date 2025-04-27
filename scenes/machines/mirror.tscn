@@ -27,13 +27,13 @@ sprite = NodePath("../../Sprite2D")
 position = Vector2(-1, -1)
 polygon = PackedVector2Array(-3, -4, 6, 5, 3, 5, -3, -1)
 
-[node name="Back_Side_Body2D" type="RigidBody2D" parent="Node2D/RigidBody2D" groups=["Absorb"]]
+[node name="Back_Side_Body2D" type="RigidBody2D" parent="Node2D/RigidBody2D"]
 freeze = true
 script = ExtResource("6_ltx65")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/RigidBody2D/Back_Side_Body2D"]
 position = Vector2(-2, 0)
-polygon = PackedVector2Array(-3, -4, -3, -1, 3, 5, 6, 5, 7, 4, 5, 4, -2, -3, -2, -5)
+polygon = PackedVector2Array(-3, -2, -3, -1, 3, 5, 6, 5, 5, 4, -3, -4)
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["Particles"]]
 texture_filter = 1

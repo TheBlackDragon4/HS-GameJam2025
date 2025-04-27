@@ -19,12 +19,14 @@ config/icon="res://assets/textures/icon.svg"
 
 SettingsDataManager="*res://addons/modular-settings-menu/singletons/settings_data_manager.gd"
 MenuTemplateManager="*res://addons/EasyMenus/Nodes/menu_template_manager.tscn"
+Global="*res://scripts/global.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=2
+window/size/initial_screen=1
 window/stretch/mode="canvas_items"
 
 [editor_plugins]
@@ -38,6 +40,7 @@ Absorb=""
 Light=""
 Interact=""
 Block=""
+Resource=""
 
 [input]
 
