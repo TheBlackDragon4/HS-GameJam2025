@@ -25,6 +25,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Interact"):
 		body.interact(linear_velocity.normalized(), light.color)
 		kill()
+	if body.is_in_group("Block"):
+		kill()
 	
 func kill():
 	queue_free()

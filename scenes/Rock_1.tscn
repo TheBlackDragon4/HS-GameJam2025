@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjxykxeic3jxf"]
+
+[ext_resource type="Texture2D" uid="uid://crwhklix84pj" path="res://assets/textures/sprites/objects/Rock.png" id="1_v60is"]
+[ext_resource type="Script" path="res://scripts/animated_sprite_2d.gd" id="2_l5cws"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_v60is"]
+light_mode = 2
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1ljr7"]
+light_mode = 2
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lsgwp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_v60is")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5j34s"]
+size = Vector2(16, 13)
+
+[node name="Node2D2" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." groups=["Block"]]
+material = SubResource("CanvasItemMaterial_v60is")
+collision_layer = 3
+collision_mask = 3
+freeze = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
+position = Vector2(0, -0.500001)
+scale = Vector2(1, 0.820312)
+polygon = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RigidBody2D"]
+material = SubResource("CanvasItemMaterial_1ljr7")
+use_parent_material = true
+sprite_frames = SubResource("SpriteFrames_lsgwp")
+frame_progress = 0.413839
+script = ExtResource("2_l5cws")
+
+[node name="Area2D" type="Area2D" parent="RigidBody2D/AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/AnimatedSprite2D/Area2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_5j34s")
