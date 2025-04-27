@@ -29,6 +29,7 @@ var currentSlot
 
 #scan tile at px position and interact with it
 func _ready() -> void:
+	process_new_tab()
 	tabCount = _map_buildings["tile_set"].get_source_count()
 	scenesCount = _map_buildings["tile_set"].get_source(0).get_alternative_tiles_count(Vector2i(0, 0)) 
 
@@ -121,7 +122,6 @@ func process_new_tab():
 		
 		for i in range(scenesCount):
 			var slot = hotbar.get_child(i)
-			print(i)
 			var temp_scene = _map_buildings["tile_set"].get_source(tab).get_scene_tile_scene(i+1).instantiate()
 			
 			if temp_scene.find_child("Sprite2D") != null:
@@ -131,7 +131,6 @@ func process_new_tab():
 				var temp_sprite_frames : SpriteFrames = temp_scene.find_child("AnimatedSprite2D").sprite_frames
 				slot.get_node("CenterContainer/ItemPicture").texture = \
 					temp_sprite_frames.get_frame_texture(temp_sprite_frames.get_animation_names()[0], 0)
-			
 			else:
 				slot.get_node("CenterContainer/ItemPicture").texture = \
 					null
