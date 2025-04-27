@@ -1,9 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://o51x54ois6bs"]
 
-[ext_resource type="PackedScene" uid="uid://cqwrgrp7ffl5o" path="res://scenes/hotbar.tscn" id="1_nt7q6"]
+[ext_resource type="PackedScene" uid="uid://cqwrgrp7ffl5o" path="res://scenes/ui/hotbar.tscn" id="1_nt7q6"]
 [ext_resource type="Texture2D" uid="uid://fkedcias8qg1" path="res://assets/textures/TabBar.png" id="1_x4jx1"]
 
 [node name="NinePatchRect" type="NinePatchRect"]
+offset_left = -88.0
+offset_top = 26.0
+offset_right = -88.0
+offset_bottom = 26.0
 texture = ExtResource("1_x4jx1")
 
 [node name="Hotbar" parent="." instance=ExtResource("1_nt7q6")]

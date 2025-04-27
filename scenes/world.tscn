@@ -1,22 +1,20 @@
-[gd_scene load_steps=33 format=4 uid="uid://sbns2q18gdd6"]
+[gd_scene load_steps=32 format=4 uid="uid://sbns2q18gdd6"]
 
 [ext_resource type="PackedScene" uid="uid://clwopr1x8gql0" path="res://scenes/TileMap.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://ql6yjbm5rt2o" path="res://scripts/world.gd" id="1_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://ctgafr46hl2w8" path="res://ui/defaultUIElement.tscn" id="2_jhx03"]
-[ext_resource type="PackedScene" uid="uid://bktwhar36vufn" path="res://scenes/templates/building.tscn" id="4_71j4m"]
+[ext_resource type="PackedScene" uid="uid://bktwhar36vufn" path="res://scenes/buildings/building.tscn" id="4_71j4m"]
 [ext_resource type="PackedScene" uid="uid://hu8dcylc7sti" path="res://scenes/templates/building with light source.tscn" id="5_qfnet"]
 [ext_resource type="Texture2D" uid="uid://dhb3gbgtdsbia" path="res://assets/textures/backgrounds/blumenwiese.png" id="6_q5onr"]
 [ext_resource type="PackedScene" uid="uid://cff6xn0jxgyfh" path="res://scenes/particle.tscn" id="7_dss4m"]
 [ext_resource type="Texture2D" uid="uid://dw5oux7d1oyf5" path="res://assets/textures/backgrounds/holz.png" id="7_jhx03"]
 [ext_resource type="Texture2D" uid="uid://br0e8l0xesyfc" path="res://assets/textures/backgrounds/Tree_pine.png" id="7_o8fc1"]
-[ext_resource type="PackedScene" uid="uid://b245af5i32bwl" path="res://scenes/collector.tscn" id="8_4mrxx"]
+[ext_resource type="PackedScene" uid="uid://b245af5i32bwl" path="res://scenes/machines/collector.tscn" id="8_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://b0n3bd0sdpksi" path="res://scenes/Stream_curve.tscn" id="8_7t5mc"]
 [ext_resource type="PackedScene" uid="uid://drvg4dkmn8fv6" path="res://scenes/world_border.tscn" id="8_dss4m"]
 [ext_resource type="PackedScene" uid="uid://b6ka413p76fuy" path="res://scenes/Stream_straight.tscn" id="9_lakw3"]
 [ext_resource type="Texture2D" uid="uid://caa6n4d0h5o6m" path="res://assets/textures/backgrounds/sand.png" id="11_7t5mc"]
 [ext_resource type="Texture2D" uid="uid://djfr6eohe1me4" path="res://assets/textures/backgrounds/Tree_oak.png" id="13_xo05s"]
-[ext_resource type="Texture2D" uid="uid://dljojwqigg53f" path="res://assets/textures/icon.svg" id="14_o8fc1"]
-[ext_resource type="PackedScene" uid="uid://c0dm6ua1pu1g0" path="res://scenes/templates/Particles_Supplier.tscn" id="14_xo05s"]
 [ext_resource type="PackedScene" uid="uid://cqngyq22qcvt5" path="res://scenes/player.tscn" id="16_dss4m"]
 [ext_resource type="Texture2D" uid="uid://b83uh2ih7pfbv" path="res://assets/textures/backgrounds/sand_1.png" id="16_lakw3"]
 [ext_resource type="Texture2D" uid="uid://cctcsylsj4xal" path="res://assets/textures/backgrounds/sand_2.png" id="17_pm21f"]
@@ -93,7 +91,7 @@ script = ExtResource("1_tlwt5")
 world_hidden_mouse = true
 
 [node name="builds" parent="." instance=ExtResource("1_f3sb7")]
-tile_map_data = PackedByteArray("AAD8/wAAAAAAAAAAAgAAAP3/AAAAAAAAAwABAAIAAAAAAAAAAgACAP//AAAAAAAAAgACAAAAAAAAAAAAAgD8//3/AAAAAAAAAQD+//3/AAAAAAAAAgA=")
+tile_map_data = PackedByteArray("AAACAP3/AQAAAAAAAQD9//3/AQAAAAAAAQD9/wIAAQAAAAAAAQACAAIAAQAAAAAAAQD7//v/AAAAAAAAAgAEAPv/AAAAAAAAAgAEAAQAAAAAAAAAAgD7/wQAAAAAAAAAAgD6//7/AAAAAAAAAgD6/wEAAAAAAAAAAgAFAAEAAAAAAAAAAgAFAP7/AAAAAAAAAgA=")
 tile_set = SubResource("TileSet_tlwt5")
 
 [node name="backgrounds" parent="." instance=ExtResource("1_f3sb7")]
@@ -103,33 +101,5 @@ tile_map_data = PackedByteArray("AAACAPv/AwAAAAAAAAABAPv/AwAAAAAAAAAAAPv/AwAAAAA
 tile_set = SubResource("TileSet_jhx03")
 
 [node name="player" parent="." instance=ExtResource("16_dss4m")]
-position = Vector2(-99, 147)
 
 [node name="FallbackBackground" type="Sprite2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="." groups=["Particles"]]
-position = Vector2(-38, 20)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("14_o8fc1")
-
-[node name="Sprite2D2" type="Sprite2D" parent="." groups=["Particles"]]
-position = Vector2(57, -48)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("14_o8fc1")
-
-[node name="Sprite2D3" type="Sprite2D" parent="." groups=["Particles"]]
-position = Vector2(36, 18)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("14_o8fc1")
-
-[node name="CPUParticles2D" parent="." node_paths=PackedStringArray("source") instance=ExtResource("14_xo05s")]
-position = Vector2(126, -18)
-source = NodePath("../Sprite2D")
-velocity = 50.0
-range = 200.0
-
-[node name="Node2D" parent="." instance=ExtResource("8_4mrxx")]
-position = Vector2(-234, 40)
-
-[node name="Node2D2" parent="." instance=ExtResource("8_4mrxx")]
-position = Vector2(-232, 97)

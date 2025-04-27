@@ -1,7 +1,8 @@
 extends CPUParticles2D
 
-@export var target: Node2D
 @export var source: Node2D
+@export var target: Node2D
+@export var target_group:String
 @export var velocity: float
 @export var range: float
 
@@ -22,7 +23,7 @@ func _on_ready() -> void:
 func find_target() -> Node2D:
 	var min_dist = INF
 	var closest: Node2D = null
-	for node : Sprite2D in get_tree().get_nodes_in_group("Particles"):
+	for node : Sprite2D in get_tree().get_nodes_in_group(target_group):
 		var dist = self.global_position.distance_to(node.global_position)
 		if dist < min_dist and \
 			dist <= range and \

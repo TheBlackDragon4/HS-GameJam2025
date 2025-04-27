@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cqwrgrp7ffl5o"]
 
 [ext_resource type="Script" uid="uid://c3hwi07faxwk6" path="res://scripts/hotbar.gd" id="1_uhbbb"]
-[ext_resource type="PackedScene" uid="uid://do20uf55sfgta" path="res://scenes/hotbarSlot.tscn" id="2_1ewps"]
+[ext_resource type="PackedScene" uid="uid://do20uf55sfgta" path="res://scenes/ui/hotbarSlot.tscn" id="2_1ewps"]
 [ext_resource type="Texture2D" uid="uid://brsc0t6lwsc66" path="res://assets/textures/Test_Lantern_16x16.png" id="3_wceku"]
 [ext_resource type="Texture2D" uid="uid://0pivhaqebcfs" path="res://assets/textures/collector.png" id="4_iapdy"]
 [ext_resource type="Texture2D" uid="uid://5pkjp42fl0le" path="res://assets/textures/Questionmark_icon.png" id="5_i62wn"]

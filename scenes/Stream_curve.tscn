@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://b0n3bd0sdpksi"]
 
 [ext_resource type="Texture2D" uid="uid://drx7yxmker0k7" path="res://assets/textures/Stream_curve.png" id="1_605fm"]
-[ext_resource type="Script" path="res://scripts/animated_sprite_2d.gd" id="2_u5a1j"]
+[ext_resource type="Script" uid="uid://diuxhmsynjoyb" path="res://scripts/animated_sprite_2d.gd" id="2_u5a1j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u5a1j"]
 atlas = ExtResource("1_605fm")

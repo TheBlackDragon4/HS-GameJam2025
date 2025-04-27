@@ -1,14 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://cqngyq22qcvt5"]
+[gd_scene load_steps=17 format=3 uid="uid://cqngyq22qcvt5"]
 
 [ext_resource type="Texture2D" uid="uid://cqf07dgtfpc5w" path="res://assets/textures/pixil-frame-0.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://b18phriw5wnet" path="res://scripts/player.gd" id="2_onrkg"]
 [ext_resource type="Texture2D" uid="uid://nd6enmopt6pe" path="res://assets/textures/point light.png" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://ddv41a6yuvs6" path="res://assets/textures/Spritesheet_Bloom.png" id="3_dqkch"]
 [ext_resource type="Script" uid="uid://diuxhmsynjoyb" path="res://scripts/animated_sprite_2d.gd" id="4_qlg0r"]
-[ext_resource type="PackedScene" uid="uid://o51x54ois6bs" path="res://scenes/ui.tscn" id="7_fjrip"]
+[ext_resource type="PackedScene" uid="uid://o51x54ois6bs" path="res://scenes/ui/ui.tscn" id="7_fjrip"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4flbx"]
 size = Vector2(14, 14)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_tuyoq"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qlg0r"]
 light_mode = 1
@@ -65,26 +67,43 @@ animations = [{
 
 [node name="Node2D" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." node_paths=PackedStringArray("root_hotbar")]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." node_paths=PackedStringArray("root_hotbar", "animated_sprite", "area2d")]
 z_index = 10
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_onrkg")
-root_hotbar = NodePath("NinePatchRect")
+root_hotbar = NodePath("Camera2D/NinePatchRect")
+animated_sprite = NodePath("../AnimatedSprite2D")
+area2d = NodePath("../Sprite2D/Area2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("RectangleShape2D_4flbx")
-
-[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
-scale = Vector2(0.1, 0.1)
 shape = SubResource("RectangleShape2D_4flbx")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(3, 3)
 
-[node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D/Camera2D"]
+[node name="NinePatchRect" parent="CharacterBody2D/Camera2D" instance=ExtResource("7_fjrip")]
+offset_top = 141.0
+offset_bottom = 141.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_tuyoq")
+texture = ExtResource("1_4flbx")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+scale = Vector2(0.1, 0.1)
+shape = SubResource("RectangleShape2D_4flbx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1000
+material = SubResource("CanvasItemMaterial_qlg0r")
+sprite_frames = SubResource("SpriteFrames_qhqgy")
+frame_progress = 0.304614
+script = ExtResource("4_qlg0r")
+
+[node name="PointLight2D" type="PointLight2D" parent="AnimatedSprite2D"]
 scale = Vector2(0.347038, 0.347038)
 energy = 0.5
 blend_mode = 2
@@ -92,19 +111,3 @@ shadow_enabled = true
 shadow_color = Color(0.164706, 0.164706, 0.164706, 1)
 texture = ExtResource("2_qlg0r")
 texture_scale = 2.0
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-z_index = 1000
-material = SubResource("CanvasItemMaterial_qlg0r")
-sprite_frames = SubResource("SpriteFrames_qhqgy")
-frame_progress = 0.304614
-script = ExtResource("4_qlg0r")
-
-[node name="NinePatchRect" parent="CharacterBody2D" instance=ExtResource("7_fjrip")]
-offset_left = -88.0
-offset_top = 143.0
-offset_right = -88.0
-offset_bottom = 143.0
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_4flbx")
