@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dajme4nfgdo4r"
-path="res://.godot/imported/Iron_ore.png-e3bd92e0c92f20fcba0ce855cec9347d.ctex"
+uid="uid://djfr6eohe1me4"
+path="res://.godot/imported/Tree_oak.png-b88ad348d9199183f8086d42e93ee798.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/Iron_ore.png"
-dest_files=["res://.godot/imported/Iron_ore.png-e3bd92e0c92f20fcba0ce855cec9347d.ctex"]
+source_file="res://assets/textures/sprites/objects/Tree_oak.png"
+dest_files=["res://.godot/imported/Tree_oak.png-b88ad348d9199183f8086d42e93ee798.ctex"]
 
 [params]
 
