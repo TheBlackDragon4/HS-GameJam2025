@@ -33,6 +33,8 @@ func open_credits():
 func close_credits():
 	content.show()
 	credits.hide()
+	start_game_button.grab_focus()
+	
 
 func _on_start_game_button_pressed():
 	emit_signal("start_game_pressed")

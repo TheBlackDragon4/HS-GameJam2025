@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://kl1rhxon4i4u"]
+[gd_scene load_steps=4 format=3 uid="uid://kl1rhxon4i4u"]
 
-[ext_resource type="Script" path="res://addons/EasyMenus/Scripts/follow_focus_center.gd" id="2_gkstp"]
+[ext_resource type="Script" uid="uid://xaeldb0j3s5" path="res://ui/credits.gd" id="1_orljq"]
+[ext_resource type="Script" uid="uid://cynkagvr1woil" path="res://addons/EasyMenus/Scripts/follow_focus_center.gd" id="2_gkstp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x77mt"]
 
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_orljq")
 
 [node name="ShapeCast2D" type="ColorRect" parent="."]
 self_modulate = Color(0.0745098, 0.0745098, 0.0745098, 0.290196)
@@ -73,7 +75,7 @@ text = "Story"
 
 [node name="Guys" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-text = "Lukas, Daniel, David, Alex & Nico"
+text = "Lukas, Daniel, David, Alex, Kim & Johannes "
 horizontal_alignment = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer"]
@@ -86,20 +88,7 @@ text = "Gamedesign"
 
 [node name="Guys" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Lukas, Daniel, David, Alex & DallE"
-horizontal_alignment = 2
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Part" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Game name"
-
-[node name="Guys" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-text = "Nico & ChatGPT"
+text = "Lukas, Daniel, David, Alex, Kim & Johannes "
 horizontal_alignment = 2
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer"]
@@ -113,7 +102,7 @@ horizontal_alignment = 3
 
 [node name="Guys" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
-text = "Lukas & Alex"
+text = "Alex"
 horizontal_alignment = 2
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer"]
@@ -126,7 +115,7 @@ text = "Code"
 
 [node name="Guys" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer5"]
 layout_mode = 2
-text = "Lukas, Daniel, David, Alex & Nico"
+text = "Lukas, Daniel, David, Alex & Henne"
 horizontal_alignment = 2
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer"]
@@ -140,7 +129,7 @@ horizontal_alignment = 3
 
 [node name="Guys" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer6"]
 layout_mode = 2
-text = "Random Plugins, Nico & David"
+text = "Random Plugins, Henne  & David"
 horizontal_alignment = 2
 
 [node name="HBoxContainer7" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer"]
@@ -149,11 +138,11 @@ layout_mode = 2
 [node name="Part" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer7"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Luna & Spike Keeper "
+text = "Exporter and \"Supporter\""
 
 [node name="Guys" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer7"]
 layout_mode = 2
-text = "Daniel & Kim"
+text = "Henne"
 horizontal_alignment = 2
 
 [node name="HSeparator3" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer"]

@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="HS-GameJam2025"
+config/name="Traverling Lights"
 run/main_scene="uid://dq6tvhqcy2aps"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://assets/textures/icon.svg"

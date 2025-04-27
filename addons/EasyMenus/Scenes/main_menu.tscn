@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://djft108icumlx" path="res://addons/EasyMenus/Scripts/main_menu_controller.gd" id="1_lbw7r"]
 [ext_resource type="PackedScene" uid="uid://kl1rhxon4i4u" path="res://ui/credits.tscn" id="2_ahamq"]
 [ext_resource type="PackedScene" uid="uid://qlskttl1wjr7" path="res://addons/EasyMenus/Scenes/options_menu.tscn" id="2_pwqpr"]
-[ext_resource type="Script" uid="uid://xaeldb0j3s5" path="res://ui/credits.gd" id="3_hv8pp"]
 [ext_resource type="PackedScene" uid="uid://px6a2dg8cawb" path="res://addons/modular-settings-menu/scenes/settings.tscn" id="3_slls3"]
+[ext_resource type="Texture2D" uid="uid://fkedcias8qg1" path="res://assets/textures/TabBar.png" id="4_hv8pp"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -19,13 +19,21 @@ script = ExtResource("1_lbw7r")
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
-script = ExtResource("3_hv8pp")
 
 [node name="Title" type="Sprite2D" parent="."]
 unique_name_in_owner = true
 self_modulate = Color(1, 1, 1, 0.92549)
-position = Vector2(960, 260)
-scale = Vector2(0.36, 0.36)
+position = Vector2(964, 335)
+scale = Vector2(1.54455, 2.16667)
+texture = ExtResource("4_hv8pp")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 251.0
+offset_right = 1048.0
+offset_bottom = 275.0
+text = "Traverling Lights"
 
 [node name="Content" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
@@ -36,9 +44,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -259.0
-offset_top = 343.0
+offset_top = -90.0
 offset_right = 259.0
-offset_bottom = 458.0
+offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
@@ -47,10 +55,10 @@ metadata/_edit_group_ = true
 [node name="StartGameButton" type="Button" parent="Content"]
 unique_name_in_owner = true
 layout_mode = 2
-focus_neighbor_top = NodePath("../HBoxContainer/QuitButton")
+focus_neighbor_top = NodePath("../QuitButton")
 focus_neighbor_bottom = NodePath("../OptionsButton")
 focus_next = NodePath("../OptionsButton")
-focus_previous = NodePath("../HBoxContainer/QuitButton")
+focus_previous = NodePath("../QuitButton")
 theme_override_font_sizes/font_size = 30
 text = "Start"
 
@@ -59,35 +67,31 @@ custom_minimum_size = Vector2(205, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_neighbor_top = NodePath("../StartGameButton")
-focus_neighbor_bottom = NodePath("../HBoxContainer/QuitButton")
-focus_next = NodePath("../HBoxContainer/QuitButton")
+focus_neighbor_bottom = NodePath("../CreditsButton")
+focus_next = NodePath("../CreditsButton")
 focus_previous = NodePath("../StartGameButton")
 theme_override_font_sizes/font_size = 30
 text = "Options"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Content"]
-custom_minimum_size = Vector2(420, 0)
-layout_mode = 2
-
-[node name="CreditsButton" type="Button" parent="Content/HBoxContainer"]
+[node name="CreditsButton" type="Button" parent="Content"]
 custom_minimum_size = Vector2(205, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-focus_neighbor_top = NodePath("../../StartGameButton")
+focus_neighbor_top = NodePath("../OptionsButton")
 focus_neighbor_bottom = NodePath("../QuitButton")
 focus_next = NodePath("../QuitButton")
-focus_previous = NodePath("../../StartGameButton")
+focus_previous = NodePath("../OptionsButton")
 theme_override_font_sizes/font_size = 30
 text = "Credits"
 
-[node name="QuitButton" type="Button" parent="Content/HBoxContainer"]
+[node name="QuitButton" type="Button" parent="Content"]
 custom_minimum_size = Vector2(205, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-focus_neighbor_top = NodePath("../../OptionsButton")
-focus_neighbor_bottom = NodePath("../../StartGameButton")
-focus_next = NodePath("../../StartGameButton")
-focus_previous = NodePath("../../OptionsButton")
+focus_neighbor_top = NodePath("../CreditsButton")
+focus_neighbor_bottom = NodePath("../StartGameButton")
+focus_next = NodePath("../StartGameButton")
+focus_previous = NodePath("../CreditsButton")
 theme_override_font_sizes/font_size = 30
 text = "Quit"
 
@@ -105,7 +109,7 @@ MenuPanelRef = NodePath("..")
 [connection signal="close" from="Credits" to="." method="close_credits"]
 [connection signal="pressed" from="Content/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="Content/OptionsButton" to="." method="open_options"]
-[connection signal="pressed" from="Content/HBoxContainer/CreditsButton" to="." method="open_credits"]
-[connection signal="pressed" from="Content/HBoxContainer/QuitButton" to="." method="quit"]
+[connection signal="pressed" from="Content/CreditsButton" to="." method="open_credits"]
+[connection signal="pressed" from="Content/QuitButton" to="." method="quit"]
 [connection signal="close" from="OptionsMenu" to="." method="close_options"]
 [connection signal="settings_menu_closed" from="Settings" to="." method="close_options"]
