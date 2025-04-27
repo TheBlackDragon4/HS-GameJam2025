@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://sbns2q18gdd6"]
+[gd_scene load_steps=44 format=4 uid="uid://sbns2q18gdd6"]
 
 [ext_resource type="Script" uid="uid://ql6yjbm5rt2o" path="res://scripts/world.gd" id="1_oo54l"]
 [ext_resource type="PackedScene" uid="uid://ctgafr46hl2w8" path="res://ui/defaultUIElement.tscn" id="2_kpybi"]
@@ -9,11 +9,15 @@
 [ext_resource type="PackedScene" uid="uid://cff6xn0jxgyfh" path="res://scenes/particle.tscn" id="7_0nbtd"]
 [ext_resource type="PackedScene" uid="uid://c8nvoj8fbmku" path="res://scenes/machines/collector.tscn" id="8_37qwj"]
 [ext_resource type="PackedScene" uid="uid://0v1n5rj0a56" path="res://scenes/machines/dispenser.tscn" id="9_navra"]
-[ext_resource type="PackedScene" uid="uid://c47nlnjn2vk4g" path="res://scenes/machines/launcher.tscn" id="10_luhhm"]
+[ext_resource type="Texture2D" uid="uid://df2miwamr8ttc" path="res://assets/textures/sprites/machines/collector/Collector_rotations-3.png.png" id="10_munwf"]
 [ext_resource type="PackedScene" uid="uid://bskqe2w845nw8" path="res://scenes/machines/mirror.tscn" id="11_fh13f"]
+[ext_resource type="Texture2D" uid="uid://cm55lfqc5nib4" path="res://assets/textures/sprites/machines/collector/Collector_rotations-1.png.png" id="11_ts3gi"]
+[ext_resource type="Texture2D" uid="uid://b1fb12k18pyb6" path="res://assets/textures/sprites/machines/collector/Collector_rotations-2.png.png" id="12_0nbtd"]
 [ext_resource type="PackedScene" uid="uid://bto8f7wq4b34h" path="res://scenes/machines/prism.tscn" id="12_rup4s"]
 [ext_resource type="Texture2D" uid="uid://br0e8l0xesyfc" path="res://assets/textures/backgrounds/Tree_pine.png" id="13_4kbfs"]
+[ext_resource type="Texture2D" uid="uid://cfdnh33l2lpgm" path="res://assets/textures/sprites/machines/collector/Collector_rotations-4.png.png" id="13_37qwj"]
 [ext_resource type="PackedScene" uid="uid://b0n3bd0sdpksi" path="res://scenes/Stream_curve.tscn" id="14_f17e3"]
+[ext_resource type="Texture2D" uid="uid://dkwux107kqgd6" path="res://assets/textures/sprites/machines/collector/collector_interior/collector_interior_rightfacing.png" id="14_navra"]
 [ext_resource type="PackedScene" uid="uid://b6ka413p76fuy" path="res://scenes/Stream_straight.tscn" id="15_x2olw"]
 [ext_resource type="Texture2D" uid="uid://dw5oux7d1oyf5" path="res://assets/textures/backgrounds/holz.png" id="16_817gm"]
 [ext_resource type="Texture2D" uid="uid://caa6n4d0h5o6m" path="res://assets/textures/backgrounds/sand.png" id="17_ggc52"]
@@ -30,11 +34,85 @@ scenes/2/scene = ExtResource("5_munwf")
 scenes/3/scene = ExtResource("6_ts3gi")
 scenes/4/scene = ExtResource("7_0nbtd")
 
+[sub_resource type="GDScript" id="GDScript_luhhm"]
+script/source = "extends Node2D
+
+@export var sprite_right: Texture2D
+@export var sprite_down: Texture2D
+@export var sprite_left: Texture2D
+@export var sprite_up: Texture2D
+@export var inside_right: Texture2D
+@export var inside_down: Texture2D
+@export var inside_left: Texture2D
+@export var inside_up: Texture2D
+@export var speed:float
+@export var spawn_distance:float
+@export var sprite:Sprite2D
+@export var sprite_inside:Sprite2D
+@export var _timer:Timer
+
+var collected = false
+var rotation_state = 0
+var cooldown = 1 #in s
+@onready var light = preload(\"res://scenes/light.tscn\")
+var shots = 0
+
+func _ready() -> void:
+	_timer.wait_time = cooldown
+
+
+func fire() -> void:
+	var light_instance = light.instantiate()
+	light_instance.position = position + Vector2(spawn_distance, 0).rotated(rotation_state*deg_to_rad(90))
+	light_instance.apply_impulse(Vector2(speed, 0).rotated(rotation_state*deg_to_rad(90)))
+	get_tree().get_root().call_deferred(\"add_child\", light_instance)
+	
+func rotate_90():
+	print(\"attempt to rotate \", name)
+	rotation_state = posmod(rotation_state+1, 4)
+	match rotation_state:
+		0:
+			sprite.texture = sprite_right
+			sprite_inside.texture = inside_right
+		1:
+			sprite.texture = sprite_down
+			sprite_inside.texture = inside_down
+		2:
+			sprite.texture = sprite_left
+			sprite_inside.texture = inside_left
+		3:
+			sprite.texture = sprite_up
+			sprite_inside.texture = inside_up
+			
+		
+
+
+func _on_timer_timeout() -> void:
+	fire()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ab70d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6fmf"]
+
+[sub_resource type="PackedScene" id="PackedScene_fh13f"]
+_bundled = {
+"conn_count": 1,
+"conns": PackedInt32Array(1073741832, 1073741831, 40, 39, 2, 0, 0),
+"editable_instances": [],
+"names": PackedStringArray("rootNode", "Node2D", "script", "sprite_right", "sprite_down", "sprite_left", "sprite_up", "speed", "spawn_distance", "sprite", "sprite_inside", "_timer", "RigidBody2D", "RigidBody2D", "Machines", "freeze", "Sprite2D", "Sprite2D", "Particles", "texture_filter", "texture", "Area2D", "Area2D", "CollisionShape2D", "CollisionShape2D", "scale", "shape", "inside_sprite", "Sprite2D", "modulate", "texture", "CollisionShape2D", "CollisionShape2D", "scale", "shape", "Timer", "Timer", "wait_time", "autostart", "_on_timer_timeout", "timeout"),
+"node_count": 8,
+"node_paths": [NodePath("."), NodePath("./RigidBody2D"), NodePath("./RigidBody2D/Sprite2D"), NodePath("./RigidBody2D/Sprite2D/Area2D"), NodePath("./RigidBody2D/Sprite2D"), NodePath("./RigidBody2D"), NodePath("."), NodePath("."), NodePath("Timer")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 10, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 1073741833, 7, 1073741834, 8, 1073741835, 9, 0, 1073741824, 0, 13, 12, -1, 1, 15, 10, 1, 14, 1073741825, 0, 17, 16, -1, 2, 19, 11, 20, 12, 1, 18, 1073741826, 0, 22, 21, -1, 0, 0, 1073741827, 0, 24, 23, -1, 2, 25, 13, 26, 14, 0, 1073741828, 0, 28, 27, -1, 2, 29, 15, 30, 16, 0, 1073741829, 0, 32, 31, -1, 2, 33, 17, 34, 18, 0, 1073741830, 0, 36, 35, -1, 2, 37, 19, 38, 20, 0),
+"variants": [SubResource("GDScript_luhhm"), ExtResource("10_munwf"), ExtResource("11_ts3gi"), ExtResource("12_0nbtd"), ExtResource("13_37qwj"), 100.0, 15.0, NodePath("RigidBody2D/Sprite2D"), NodePath("RigidBody2D/Sprite2D/inside_sprite"), NodePath("Timer"), true, 1, ExtResource("10_munwf"), Vector2(0.667034, 0.667034), SubResource("RectangleShape2D_ab70d"), Color(0, 0.833333, 1, 0.188235), ExtResource("14_navra"), Vector2(0.624173, 0.624173), SubResource("RectangleShape2D_o6fmf"), 0.25, true],
+"version": 3
+}
+
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_jhx03"]
 resource_name = "Machines"
 scenes/1/scene = ExtResource("8_37qwj")
 scenes/2/scene = ExtResource("9_navra")
-scenes/3/scene = ExtResource("10_luhhm")
+scenes/3/scene = SubResource("PackedScene_fh13f")
 scenes/4/scene = ExtResource("11_fh13f")
 scenes/5/scene = ExtResource("12_rup4s")
 
@@ -99,7 +177,7 @@ script = ExtResource("1_oo54l")
 world_hidden_mouse = true
 
 [node name="builds" parent="." instance=ExtResource("3_ctatt")]
-tile_map_data = PackedByteArray("AAD7//v/AAAAAAAAAgAEAPv/AAAAAAAAAgD7/wQAAAAAAAAAAgD6//7/AAAAAAAAAgD6/wEAAAAAAAAAAgAFAAEAAAAAAAAAAgAFAP7/AAAAAAAAAgAIAPz/AQAAAAAAAgAIAP3/AQAAAAAAAgAIAP7/AQAAAAAAAgAEAAQAAAAAAAAAAgALAPz/AQAAAAAABAALAP3/AQAAAAAABAALAP7/AQAAAAAABAA=")
+tile_map_data = PackedByteArray("AAD7//v/AAAAAAAAAgAEAPv/AAAAAAAAAgD7/wQAAAAAAAAAAgD6//7/AAAAAAAAAgD6/wEAAAAAAAAAAgAFAAEAAAAAAAAAAgAFAP7/AAAAAAAAAgAEAAQAAAAAAAAAAgD9//3/AQAAAAAAAgACAP3/AQAAAAAAAQADAP3/AQAAAAAAAgA=")
 tile_set = SubResource("TileSet_tlwt5")
 
 [node name="backgrounds" parent="." instance=ExtResource("3_ctatt")]

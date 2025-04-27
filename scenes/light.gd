@@ -2,7 +2,13 @@ extends RigidBody2D
 
 var life = 3
 var lifespan = life
+var dropped = false
+@export var collision:CollisionShape2D
 @export var light:PointLight2D
+
+func _ready() -> void:
+	if dropped:
+		collision.disabled = true
 
 func _physics_process(delta: float) -> void:
 	life -= delta
@@ -13,7 +19,10 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Absorb"):
-		body.absorb()
-		
-		queue_free()
-	pass # Replace with function body.
+		print("am i dropped?  ", dropped)
+		body.absorb(dropped)
+		kill()
+		#queue_free()
+	
+func kill():
+	queue_free()

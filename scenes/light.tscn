@@ -12,10 +12,11 @@ bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ky1i4"]
 
-[node name="Body" type="RigidBody2D" node_paths=PackedStringArray("light")]
+[node name="Body" type="RigidBody2D" node_paths=PackedStringArray("collision", "light") groups=["Light"]]
 z_index = 20
 physics_material_override = SubResource("PhysicsMaterial_ky1i4")
 script = ExtResource("1_ky1i4")
+collision = NodePath("CollisionShape2D")
 light = NodePath("Sprite2D/PointLight2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

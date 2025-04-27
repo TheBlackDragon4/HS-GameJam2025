@@ -1,27 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://bto8f7wq4b34h"]
+[gd_scene load_steps=5 format=3 uid="uid://bto8f7wq4b34h"]
 
-[ext_resource type="Script" uid="uid://cky4vhodjnjnw" path="res://scripts/machines/launcher.gd" id="1_o0h3b"]
 [ext_resource type="Texture2D" uid="uid://df2miwamr8ttc" path="res://assets/textures/sprites/machines/collector/Collector_rotations-3.png.png" id="2_lx3um"]
-[ext_resource type="Texture2D" uid="uid://cm55lfqc5nib4" path="res://assets/textures/sprites/machines/collector/Collector_rotations-1.png.png" id="3_4nelt"]
-[ext_resource type="Texture2D" uid="uid://b1fb12k18pyb6" path="res://assets/textures/sprites/machines/collector/Collector_rotations-2.png.png" id="4_x54tl"]
-[ext_resource type="Texture2D" uid="uid://cfdnh33l2lpgm" path="res://assets/textures/sprites/machines/collector/Collector_rotations-4.png.png" id="5_26ks3"]
 [ext_resource type="Texture2D" uid="uid://dkwux107kqgd6" path="res://assets/textures/sprites/machines/collector/collector_interior/collector_interior_rightfacing.png" id="6_1ylmd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ab70d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o6fmf"]
 
-[node name="rootNode" type="Node2D" node_paths=PackedStringArray("sprite", "sprite_inside", "_timer")]
-script = ExtResource("1_o0h3b")
-sprite_right = ExtResource("2_lx3um")
-sprite_down = ExtResource("3_4nelt")
-sprite_left = ExtResource("4_x54tl")
-sprite_up = ExtResource("5_26ks3")
-speed = 100.0
-spawn_distance = 15.0
-sprite = NodePath("RigidBody2D/Sprite2D")
-sprite_inside = NodePath("RigidBody2D/Sprite2D/inside_sprite")
-_timer = NodePath("Timer")
+[node name="rootNode" type="Node2D"]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." groups=["Machines"]]
 freeze = true

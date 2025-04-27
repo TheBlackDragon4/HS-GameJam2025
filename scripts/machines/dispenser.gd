@@ -15,9 +15,9 @@ extends Node2D
 @export var _timer:Timer
 
 var rotation_state = 0
-var cooldown = .5 #in s
+var cooldown = .51 #in s
 @onready var light = preload("res://scenes/light.tscn")
-var shots = 0
+var charge = 10
 
 func _ready() -> void:
 	_timer.wait_time = cooldown
@@ -25,7 +25,7 @@ func _ready() -> void:
 
 func fire() -> void:
 	var light_instance = light.instantiate()
-	light_instance.position = position + Vector2(spawn_distance, 0).rotated(rotation_state*deg_to_rad(90))
+	light_instance.position = global_position + Vector2(spawn_distance, 0).rotated(rotation_state*deg_to_rad(90))
 	light_instance.apply_impulse(Vector2(speed, 0).rotated(rotation_state*deg_to_rad(90)))
 	get_tree().get_root().call_deferred("add_child", light_instance)
 	
@@ -48,6 +48,14 @@ func rotate_90():
 			
 		
 
-
 func _on_timer_timeout() -> void:
-	fire()
+	print("shooot out with ", charge, " remaining")
+	if charge > 0:
+		charge -= 1
+		fire()
+	
+func absorb(is_dropped):
+	print("yumm?")
+	if is_dropped:
+		print(" eat that light dispenser.. ")
+		charge += 1

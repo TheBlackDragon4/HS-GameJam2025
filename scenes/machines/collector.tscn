@@ -1,8 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8nvoj8fbmku"]
+[gd_scene load_steps=12 format=3 uid="uid://c8nvoj8fbmku"]
 
 [ext_resource type="Script" uid="uid://d20e8k0s7jlwv" path="res://scripts/machines/collector.gd" id="1_rkiym"]
+[ext_resource type="Texture2D" uid="uid://cfdnh33l2lpgm" path="res://assets/textures/sprites/machines/collector/Collector_rotations-4.png.png" id="2_ow4du"]
+[ext_resource type="Texture2D" uid="uid://b1fb12k18pyb6" path="res://assets/textures/sprites/machines/collector/Collector_rotations-2.png.png" id="3_he2sd"]
 [ext_resource type="Texture2D" uid="uid://df2miwamr8ttc" path="res://assets/textures/sprites/machines/collector/Collector_rotations-3.png.png" id="4_uhx7f"]
+[ext_resource type="Texture2D" uid="uid://cm55lfqc5nib4" path="res://assets/textures/sprites/machines/collector/Collector_rotations-1.png.png" id="5_hwfey"]
+[ext_resource type="Texture2D" uid="uid://dusakbip5mkqa" path="res://assets/textures/sprites/machines/collector/collector_interior/Collector_interior_forwards&backwards.png" id="6_dbbrq"]
 [ext_resource type="Texture2D" uid="uid://dkwux107kqgd6" path="res://assets/textures/sprites/machines/collector/collector_interior/collector_interior_rightfacing.png" id="8_8d0pk"]
+[ext_resource type="Texture2D" uid="uid://bigftgnnb46or" path="res://assets/textures/sprites/machines/collector/collector_interior/collector_interior_leftfacing.png" id="8_ow4du"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rkiym"]
 friction = 0.0
@@ -14,10 +19,22 @@ bounce = 1.0
 
 [node name="rootNode" type="Node2D"]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." groups=["Absorb", "Machines"]]
+[node name="RigidBody2D" type="RigidBody2D" parent="." node_paths=PackedStringArray("sprite", "sprite_inside", "_timer") groups=["Absorb", "Machines"]]
 physics_material_override = SubResource("PhysicsMaterial_rkiym")
 freeze = true
 script = ExtResource("1_rkiym")
+sprite_right = ExtResource("4_uhx7f")
+sprite_down = ExtResource("5_hwfey")
+sprite_left = ExtResource("3_he2sd")
+sprite_up = ExtResource("2_ow4du")
+inside_right = ExtResource("8_8d0pk")
+inside_down = ExtResource("6_dbbrq")
+inside_left = ExtResource("8_ow4du")
+inside_up = ExtResource("6_dbbrq")
+spawn_distance = 16.0
+sprite = NodePath("Sprite2D")
+sprite_inside = NodePath("Sprite2D/inside_sprite")
+_timer = NodePath("../Timer")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" groups=["Particles"]]
 texture_filter = 1
@@ -26,7 +43,7 @@ texture = ExtResource("4_uhx7f")
 [node name="Area2D" type="Area2D" parent="RigidBody2D/Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Sprite2D/Area2D"]
-scale = Vector2(0.667034, 0.667034)
+scale = Vector2(0.767911, 0.767911)
 shape = SubResource("RectangleShape2D_ab70d")
 
 [node name="inside_sprite" type="Sprite2D" parent="RigidBody2D/Sprite2D"]
@@ -34,11 +51,12 @@ modulate = Color(0, 0.833333, 1, 0.188235)
 texture = ExtResource("8_8d0pk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-scale = Vector2(0.624173, 0.624173)
+scale = Vector2(0.574247, 0.574247)
 shape = SubResource("RectangleShape2D_o6fmf")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.25
+wait_time = 0.251
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="RigidBody2D/Sprite2D/Area2D" to="RigidBody2D" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="RigidBody2D" method="_on_timer_timeout"]
