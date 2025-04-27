@@ -45,6 +45,7 @@ var invalidSaveFile: bool = false
 
 func _ready():
 	super._ready()
+	return
 	ACTION_LIST_.make_read_only()
 	SettingsDataManager.connect(\"settings_retrieved\", load_settings)
 	# Verify the directory
