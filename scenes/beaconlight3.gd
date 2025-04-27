@@ -5,9 +5,9 @@ extends Node2D
 @export var pointlight : PointLight2D
 
 @export var max_colors = [
-	255, #R
+	0, #R
 	255, #G
-	0  #B
+	255  #B
 ]
 
 func _ready() -> void:

@@ -6,8 +6,8 @@ extends Node2D
 
 @export var max_colors = [
 	255, #R
-	255, #G
-	0  #B
+	0, #G
+	255  #B
 ]
 
 func _ready() -> void:
