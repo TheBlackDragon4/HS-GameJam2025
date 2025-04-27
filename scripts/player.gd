@@ -121,9 +121,9 @@ func process_new_tab():
 		
 		for i in range(scenesCount):
 			var slot = hotbar.get_child(i)
-			
-			var temp_scene = _map_buildings["tile_set"].get_source(tab).get_scene_tile_scene(i+1).instantiate()
 			print(i)
+			var temp_scene = _map_buildings["tile_set"].get_source(tab).get_scene_tile_scene(i+1).instantiate()
+			
 			if temp_scene.find_child("Sprite2D") != null:
 				slot.get_node("CenterContainer/ItemPicture").texture = \
 					temp_scene.find_child("Sprite2D").texture
