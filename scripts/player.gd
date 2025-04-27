@@ -109,20 +109,41 @@ func process_new_tab():
 		scenesIndex = 1
 		print("new tab: ", tab)
 		scenesCount = \
-			_map_buildings["tile_set"].get_source(tab).get_alternative_tiles_count(Vector2i(0, 0)) 
+			_map_buildings["tile_set"].get_source(tab) \
+			.get_alternative_tiles_count(Vector2i(0, 0)) 
 		root_hotbar.get_node("Label").text = \
 			_map_buildings["tile_set"].get_source(tab).resource_name
 			
+		#print("count: ", _map_buildings["tile_set"].get_source(tab).get_scene_tile_scene(1).get_state())
+		
 		for slot in hotbar.get_children():
-			slot.get_node("CenterContainer/ItemPicture").texture = \
-				slot.get_meta("MenuToImage")[tab]
-		hotbar.get_child(scenesIndex-1).grab_focus()
+			slot.get_node("CenterContainer/ItemPicture").texture = null
+		
+		for i in range(scenesCount):
+			var slot = hotbar.get_child(i)
+			
+			var temp_scene = _map_buildings["tile_set"].get_source(tab).get_scene_tile_scene(i+1).instantiate()
+			print(i)
+			if temp_scene.find_child("Sprite2D") != null:
+				slot.get_node("CenterContainer/ItemPicture").texture = \
+					temp_scene.find_child("Sprite2D").texture
+			elif temp_scene.find_child("AnimatedSprite2D") != null:
+				var temp_sprite_frames : SpriteFrames = temp_scene.find_child("AnimatedSprite2D").sprite_frames
+				slot.get_node("CenterContainer/ItemPicture").texture = \
+					temp_sprite_frames.get_frame_texture(temp_sprite_frames.get_animation_names()[0], 0)
+			
+			else:
+				slot.get_node("CenterContainer/ItemPicture").texture = \
+					null
+				#slot.get_meta("MenuToImage")[tab]
+		#hotbar.get_child(scenesIndex-1).grab_focus()
+		
 func process_new_menu():
 	print("new menu index: ", scenesIndex)
 	hotbar.get_child(scenesIndex-1).grab_focus()
 
 func rotate_body():
-	for i in area2d.get_overlapping_bodies():
+	for i : Node2D in area2d.get_overlapping_bodies():
 		print("rotate?")
 		if i.is_in_group("Machines"):
 			print("rotate.")
