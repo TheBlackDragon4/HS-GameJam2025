@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=4 uid="uid://sbns2q18gdd6"]
+[gd_scene load_steps=69 format=4 uid="uid://sbns2q18gdd6"]
 
 [ext_resource type="Script" uid="uid://ql6yjbm5rt2o" path="res://scripts/world.gd" id="1_oo54l"]
 [ext_resource type="PackedScene" uid="uid://ctgafr46hl2w8" path="res://ui/defaultUIElement.tscn" id="2_kpybi"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c8nvoj8fbmku" path="res://scenes/machines/collector.tscn" id="8_37qwj"]
 [ext_resource type="PackedScene" uid="uid://0v1n5rj0a56" path="res://scenes/machines/dispenser.tscn" id="9_navra"]
 [ext_resource type="PackedScene" uid="uid://bskqe2w845nw8" path="res://scenes/machines/mirror.tscn" id="11_fh13f"]
+[ext_resource type="PackedScene" uid="uid://chbvnuvvr8urx" path="res://scenes/consumer.tscn" id="12_4kbfs"]
 [ext_resource type="PackedScene" uid="uid://bto8f7wq4b34h" path="res://scenes/machines/prism.tscn" id="12_rup4s"]
 [ext_resource type="Texture2D" uid="uid://br0e8l0xesyfc" path="res://assets/textures/backgrounds/Tree_pine.png" id="13_4kbfs"]
 [ext_resource type="PackedScene" uid="uid://b0n3bd0sdpksi" path="res://scenes/Stream_curve.tscn" id="14_f17e3"]
@@ -47,6 +48,7 @@ resource_name = "Machines"
 scenes/1/scene = ExtResource("8_37qwj")
 scenes/2/scene = ExtResource("9_navra")
 scenes/3/scene = ExtResource("12_rup4s")
+scenes/4/scene = ExtResource("12_4kbfs")
 
 [sub_resource type="TileSet" id="TileSet_tlwt5"]
 sources/0 = SubResource("TileSetScenesCollectionSource_i7141")
@@ -216,7 +218,7 @@ script = ExtResource("1_oo54l")
 world_hidden_mouse = true
 
 [node name="builds" parent="." instance=ExtResource("3_ctatt")]
-tile_map_data = PackedByteArray("AAD7//v/AAAAAAAAAgAEAPv/AAAAAAAAAgD7/wQAAAAAAAAAAgD6//7/AAAAAAAAAgD6/wEAAAAAAAAAAgAFAAEAAAAAAAAAAgAFAP7/AAAAAAAAAgAEAAQAAAAAAAAAAgABAP3/AQAAAAAAAwD9//3/AQAAAAAAAgA=")
+tile_map_data = PackedByteArray("AAD7//v/AAAAAAAAAgAEAPv/AAAAAAAAAgD7/wQAAAAAAAAAAgD6//7/AAAAAAAAAgD6/wEAAAAAAAAAAgAFAAEAAAAAAAAAAgAFAP7/AAAAAAAAAgAEAAQAAAAAAAAAAgABAP3/AQAAAAAAAwD9//3/AQAAAAAAAgAHAAMAAQAAAAAABAAHAAIAAQAAAAAABAAHAAEAAQAAAAAABAAHAAAAAQAAAAAABAAHAP//AQAAAAAABAAHAP7/AQAAAAAABAAHAP3/AQAAAAAABAAHAPz/AQAAAAAABAAHAPv/AQAAAAAABAAHAPr/AQAAAAAABAAHAPn/AQAAAAAABAAHAAQAAQAAAAAABAAHAAUAAQAAAAAABAAHAAYAAQAAAAAABAAHAAcAAQAAAAAABAA=")
 tile_set = SubResource("TileSet_tlwt5")
 
 [node name="backgrounds" parent="." instance=ExtResource("3_ctatt")]
