@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djfr6eohe1me4"
-path="res://.godot/imported/Tree_oak.png-5674817715663cd3a5b1402a5c4b2263.ctex"
+uid="uid://d25tlu6poffbs"
+path="res://.godot/imported/Crystal_ore.png-a5850601c4ad317222fdfbf85d65ee18.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/backgrounds/Tree_oak.png"
-dest_files=["res://.godot/imported/Tree_oak.png-5674817715663cd3a5b1402a5c4b2263.ctex"]
+source_file="res://assets/textures/sprites/objects/Crystal_ore.png"
+dest_files=["res://.godot/imported/Crystal_ore.png-a5850601c4ad317222fdfbf85d65ee18.ctex"]
 
 [params]
 
