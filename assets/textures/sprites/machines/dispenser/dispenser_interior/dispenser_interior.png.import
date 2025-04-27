@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6vjptmxgw0xx"
-path="res://.godot/imported/Beacon_3.png-19fb8beab65d8820d01dd7dc3bc0c860.ctex"
+uid="uid://byr0cs6sievrp"
+path="res://.godot/imported/dispenser_interior.png-b6e830302674d9d83796275b2e3b223d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/sprites/Beacon_3.png"
-dest_files=["res://.godot/imported/Beacon_3.png-19fb8beab65d8820d01dd7dc3bc0c860.ctex"]
+source_file="res://assets/textures/sprites/machines/dispenser/dispenser_interior/dispenser_interior.png"
+dest_files=["res://.godot/imported/dispenser_interior.png-b6e830302674d9d83796275b2e3b223d.ctex"]
 
 [params]
 

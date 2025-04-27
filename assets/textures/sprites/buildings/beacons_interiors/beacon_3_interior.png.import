@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dixn1ehrp62qv"
-path="res://.godot/imported/beacon_1.png-5cee01db6f0d9066dfc19c83f5bf5a99.ctex"
+uid="uid://c2flaerk6ncvb"
+path="res://.godot/imported/beacon_3_interior.png-f4e0a86c8e97a40aa7e090331d1fd6cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/sprites/beacon_1.png"
-dest_files=["res://.godot/imported/beacon_1.png-5cee01db6f0d9066dfc19c83f5bf5a99.ctex"]
+source_file="res://assets/textures/sprites/buildings/beacons_interiors/beacon_3_interior.png"
+dest_files=["res://.godot/imported/beacon_3_interior.png-f4e0a86c8e97a40aa7e090331d1fd6cd.ctex"]
 
 [params]
 

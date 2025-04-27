@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dusakbip5mkqa"
-path="res://.godot/imported/Collector_interior_forwards&backwards.png-b2e106693bc29d42f78abdd54f46eed6.ctex"
+uid="uid://bigftgnnb46or"
+path="res://.godot/imported/collector_interior_leftfacing.png-38f797772e3f4ce965d3ee614094c137.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/sprites/machines/collector/Collector_interior_forwards&backwards.png"
-dest_files=["res://.godot/imported/Collector_interior_forwards&backwards.png-b2e106693bc29d42f78abdd54f46eed6.ctex"]
+source_file="res://assets/textures/sprites/machines/collector/collector_interior/collector_interior_leftfacing.png"
+dest_files=["res://.godot/imported/collector_interior_leftfacing.png-38f797772e3f4ce965d3ee614094c137.ctex"]
 
 [params]
 

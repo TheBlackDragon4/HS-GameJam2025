@@ -1,12 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8nvoj8fbmku"]
+[gd_scene load_steps=6 format=3 uid="uid://0v1n5rj0a56"]
 
-[ext_resource type="Script" uid="uid://d20e8k0s7jlwv" path="res://scripts/machines/collector.gd" id="1_rkiym"]
-[ext_resource type="Texture2D" uid="uid://df2miwamr8ttc" path="res://assets/textures/sprites/machines/collector/Collector_rotations-3.png.png" id="4_uhx7f"]
-[ext_resource type="Texture2D" uid="uid://dkwux107kqgd6" path="res://assets/textures/sprites/machines/collector/collector_interior/collector_interior_rightfacing.png" id="8_8d0pk"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rkiym"]
-friction = 0.0
-bounce = 1.0
+[ext_resource type="Script" uid="uid://b5mfaa7vp4tod" path="res://scripts/machines/dispenser.gd" id="1_mmsqd"]
+[ext_resource type="Texture2D" uid="uid://df2miwamr8ttc" path="res://assets/textures/sprites/machines/collector/Collector_rotations-3.png.png" id="2_q564h"]
+[ext_resource type="Texture2D" uid="uid://dkwux107kqgd6" path="res://assets/textures/sprites/machines/collector/collector_interior/collector_interior_rightfacing.png" id="6_hs0yr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ab70d"]
 
@@ -15,13 +11,12 @@ bounce = 1.0
 [node name="rootNode" type="Node2D"]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." groups=["Absorb", "Machines"]]
-physics_material_override = SubResource("PhysicsMaterial_rkiym")
 freeze = true
-script = ExtResource("1_rkiym")
+script = ExtResource("1_mmsqd")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" groups=["Particles"]]
 texture_filter = 1
-texture = ExtResource("4_uhx7f")
+texture = ExtResource("2_q564h")
 
 [node name="Area2D" type="Area2D" parent="RigidBody2D/Sprite2D"]
 
@@ -31,7 +26,7 @@ shape = SubResource("RectangleShape2D_ab70d")
 
 [node name="inside_sprite" type="Sprite2D" parent="RigidBody2D/Sprite2D"]
 modulate = Color(0, 0.833333, 1, 0.188235)
-texture = ExtResource("8_8d0pk")
+texture = ExtResource("6_hs0yr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 scale = Vector2(0.624173, 0.624173)
