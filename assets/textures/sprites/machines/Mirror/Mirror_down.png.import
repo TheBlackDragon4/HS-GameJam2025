@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df2miwamr8ttc"
-path="res://.godot/imported/Collector_rotations-3.png.png-5aef17e20d4f7ade25b7125af27aeea8.ctex"
+uid="uid://b1jaflyxwacue"
+path="res://.godot/imported/Mirror_down.png-592ebc83fca0ce9a7e75e4688201ebd9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/sprites/collector/Collector_rotations-3.png.png"
-dest_files=["res://.godot/imported/Collector_rotations-3.png.png-5aef17e20d4f7ade25b7125af27aeea8.ctex"]
+source_file="res://assets/textures/sprites/machines/Mirror/Mirror_down.png"
+dest_files=["res://.godot/imported/Mirror_down.png-592ebc83fca0ce9a7e75e4688201ebd9.ctex"]
 
 [params]
 

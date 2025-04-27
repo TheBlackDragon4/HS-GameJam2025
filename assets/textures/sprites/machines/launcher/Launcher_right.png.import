@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfdnh33l2lpgm"
-path="res://.godot/imported/Collector_rotations-4.png.png-62da46f504d09b5d1ac185f61f11ce8c.ctex"
+uid="uid://bg12t0040xfrk"
+path="res://.godot/imported/Launcher_right.png-2a2f9c3d190c3f2619c4579e19e0a645.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/sprites/collector/Collector_rotations-4.png.png"
-dest_files=["res://.godot/imported/Collector_rotations-4.png.png-62da46f504d09b5d1ac185f61f11ce8c.ctex"]
+source_file="res://assets/textures/sprites/machines/launcher/Launcher_right.png"
+dest_files=["res://.godot/imported/Launcher_right.png-2a2f9c3d190c3f2619c4579e19e0a645.ctex"]
 
 [params]
 

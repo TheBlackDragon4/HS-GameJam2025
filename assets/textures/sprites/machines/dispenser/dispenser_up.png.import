@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm55lfqc5nib4"
-path="res://.godot/imported/Collector_rotations-1.png.png-b96389ff433660b760ab4de98134b67b.ctex"
+uid="uid://c48u3fkcarcch"
+path="res://.godot/imported/dispenser_up.png-53014d72db15d3b1ea600c1e00e10c8c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/sprites/collector/Collector_rotations-1.png.png"
-dest_files=["res://.godot/imported/Collector_rotations-1.png.png-b96389ff433660b760ab4de98134b67b.ctex"]
+source_file="res://assets/textures/sprites/machines/dispenser/dispenser_up.png"
+dest_files=["res://.godot/imported/dispenser_up.png-53014d72db15d3b1ea600c1e00e10c8c.ctex"]
 
 [params]
 

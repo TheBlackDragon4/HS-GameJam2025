@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkwux107kqgd6"
-path="res://.godot/imported/collector_interior_rightfacing.png-c76942e1988ab2e62998bdc4718471d9.ctex"
+uid="uid://jcw50remnmxk"
+path="res://.godot/imported/Prism_up.png-68958842906ed3a7152fa42c318b0e5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/sprites/collector/collector_interior_rightfacing.png"
-dest_files=["res://.godot/imported/collector_interior_rightfacing.png-c76942e1988ab2e62998bdc4718471d9.ctex"]
+source_file="res://assets/textures/sprites/machines/prism/Prism_up.png"
+dest_files=["res://.godot/imported/Prism_up.png-68958842906ed3a7152fa42c318b0e5a.ctex"]
 
 [params]
 
