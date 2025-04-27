@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bskqe2w845nw8"]
+[gd_scene load_steps=9 format=3 uid="uid://bskqe2w845nw8"]
 
 [ext_resource type="Script" uid="uid://h4jqsk5s6ip1" path="res://scripts/machines/mirror.gd" id="1_6n0f3"]
 [ext_resource type="Texture2D" uid="uid://cxnc1st13gyl" path="res://assets/textures/sprites/machines/Mirror/Mirror_right.png" id="2_xnl6s"]
 [ext_resource type="Texture2D" uid="uid://b1jaflyxwacue" path="res://assets/textures/sprites/machines/Mirror/Mirror_down.png" id="3_p0x15"]
 [ext_resource type="Texture2D" uid="uid://q66d1fgeomod" path="res://assets/textures/sprites/machines/Mirror/Mirror_left.png" id="4_amwwc"]
 [ext_resource type="Texture2D" uid="uid://btbaevverrucy" path="res://assets/textures/sprites/machines/Mirror/Mirror_up.png" id="5_1ntfw"]
+[ext_resource type="Texture2D" uid="uid://p27mxwkxaiqh" path="res://assets/textures/sprites/machines/Mirror/Mirror_down_right.png" id="6_ltx65"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o6fmf"]
 
@@ -30,7 +31,7 @@ shape = SubResource("RectangleShape2D_o6fmf")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" groups=["Particles"]]
 texture_filter = 1
-texture = ExtResource("2_xnl6s")
+texture = ExtResource("6_ltx65")
 
 [node name="Area2D" type="Area2D" parent="RigidBody2D/Sprite2D"]
 
