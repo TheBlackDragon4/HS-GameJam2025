@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://sbns2q18gdd6"]
+[gd_scene load_steps=29 format=4 uid="uid://sbns2q18gdd6"]
 
 [ext_resource type="PackedScene" uid="uid://clwopr1x8gql0" path="res://scenes/TileMap.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://ql6yjbm5rt2o" path="res://scripts/world.gd" id="1_tlwt5"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dw5oux7d1oyf5" path="res://assets/textures/backgrounds/holz.png" id="7_jhx03"]
 [ext_resource type="PackedScene" uid="uid://b245af5i32bwl" path="res://scenes/collector.tscn" id="8_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://drvg4dkmn8fv6" path="res://scenes/world_border.tscn" id="8_dss4m"]
+[ext_resource type="PackedScene" uid="uid://chbvnuvvr8urx" path="res://scenes/consumer.tscn" id="9_7t5mc"]
 [ext_resource type="Texture2D" uid="uid://caa6n4d0h5o6m" path="res://assets/textures/backgrounds/sand.png" id="11_7t5mc"]
 [ext_resource type="Texture2D" uid="uid://dljojwqigg53f" path="res://assets/textures/icon.svg" id="14_o8fc1"]
 [ext_resource type="PackedScene" uid="uid://c0dm6ua1pu1g0" path="res://scenes/templates/Particles_Supplier.tscn" id="14_xo05s"]
@@ -27,6 +28,7 @@ scenes/4/scene = ExtResource("7_dss4m")
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_jhx03"]
 resource_name = "Machines"
 scenes/1/scene = ExtResource("8_4mrxx")
+scenes/2/scene = ExtResource("9_7t5mc")
 
 [sub_resource type="TileSet" id="TileSet_tlwt5"]
 sources/0 = SubResource("TileSetScenesCollectionSource_i7141")
@@ -73,7 +75,7 @@ script = ExtResource("1_tlwt5")
 world_hidden_mouse = true
 
 [node name="builds" parent="." instance=ExtResource("1_f3sb7")]
-tile_map_data = PackedByteArray("AAD8/wAAAAAAAAAAAgAAAP3/AAAAAAAAAgACAP//AAAAAAAAAgACAAAAAAAAAAAAAgD8/wQAAAAAAAAAAgD//wUAAAAAAAAABAABAAIAAAAAAAAAAgACAAUAAQAAAAAAAQAFAAYAAQAAAAAAAQAIAAYAAQAAAAAAAQAEAAIAAQAAAAAAAQAIAAIAAQAAAAAAAQAKAAQAAQAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAD8/wAAAAAAAAAAAgAAAP3/AAAAAAAAAgACAP//AAAAAAAAAgACAAAAAAAAAAAAAgD8/wQAAAAAAAAAAgD//wUAAAAAAAAABAABAAIAAAAAAAAAAgACAAUAAQAAAAAAAQAFAAYAAQAAAAAAAQAIAAYAAQAAAAAAAQAEAAIAAQAAAAAAAQAIAAIAAQAAAAAAAQAKAAQAAQAAAAAAAQD6/wIAAQAAAAAAAgA=")
 tile_set = SubResource("TileSet_tlwt5")
 
 [node name="backgrounds" parent="." instance=ExtResource("1_f3sb7")]
@@ -83,7 +85,6 @@ tile_map_data = PackedByteArray("AAACAPv/AwAAAAAAAAABAPv/AwAAAAAAAAAAAPv/AwAAAAA
 tile_set = SubResource("TileSet_jhx03")
 
 [node name="player" parent="." instance=ExtResource("16_dss4m")]
-position = Vector2(-99, 147)
 
 [node name="FallbackBackground" type="Sprite2D" parent="."]
 
