@@ -28,7 +28,7 @@ anim_speed_curve = SubResource("CurveTexture_y25om")
 [node name="Particle" type="Node2D" groups=["Resource"]]
 
 [node name="2D Object" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 1, 1)
+modulate = Color(0, 0.490196, 1, 1)
 self_modulate = Color(1, 1, 1, 0.196078)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="2D Object"]

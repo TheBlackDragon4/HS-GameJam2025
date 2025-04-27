@@ -28,24 +28,24 @@ func rotate_90():
 			
 		
 
-func fire(direction, sign, col) -> void:
+func fire(direction, sign, col, scale:float = 1) -> void:
 	var light_instance = light.instantiate()
 	light_instance.position = global_position + sign * Vector2(spawn_distance, 0)\
 		.rotated(rotation_state*deg_to_rad(90)).rotated(direction)
 	light_instance.apply_impulse(sign * Vector2(speed, 0)\
 		.rotated(rotation_state*deg_to_rad(90)).rotated(direction))
-	light_instance.light.color=Color(col)
 	light_instance.dropped = true
+	light_instance.color = col
 	get_tree().get_root().call_deferred("add_child", light_instance)
 
 func interact(direction, color):
 	var dot = direction.dot(-1 * Vector2(1,0).rotated(rotation))
 	var sign = sign(dot)
-	print(dot)
+	#print(dot)
 	if abs(dot)>.9:
 		if color.r:
-			fire(deg_to_rad(60*sign), sign, Color(1, 0, 0))
+			fire(deg_to_rad(60*sign), sign, Color(1, 0, 0), color.r)
 		if color.g:
-			fire(deg_to_rad(40*sign), sign, Color(0, 1, 0))
+			fire(deg_to_rad(40*sign), sign, Color(0, 1, 0), color.g)
 		if color.b:
-			fire(deg_to_rad(20*sign), sign, Color(0, 0, 1))
+			fire(deg_to_rad(20*sign), sign, Color(0, 0, 1), color.b)
