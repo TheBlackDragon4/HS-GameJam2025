@@ -22,7 +22,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		print("am i dropped?  ", dropped)
 		body.absorb(dropped)
 		kill()
-		#queue_free()
+	if body.is_in_group("Interact"):
+		body.interact(linear_velocity.normalized(), light.color)
+		kill()
 	
 func kill():
 	queue_free()

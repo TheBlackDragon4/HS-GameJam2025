@@ -1,30 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://bto8f7wq4b34h"]
+[gd_scene load_steps=9 format=3 uid="uid://bto8f7wq4b34h"]
 
-[ext_resource type="Texture2D" uid="uid://df2miwamr8ttc" path="res://assets/textures/sprites/machines/collector/Collector_rotations-3.png.png" id="2_lx3um"]
+[ext_resource type="Script" uid="uid://dfo8t0lc7u6w5" path="res://scripts/machines/prism.gd" id="1_ls4lb"]
+[ext_resource type="Texture2D" uid="uid://ypt1j33jv8dx" path="res://assets/textures/sprites/machines/prism/Prism_right.png" id="2_4nelt"]
+[ext_resource type="Texture2D" uid="uid://dwjl55v5lq6b8" path="res://assets/textures/sprites/machines/prism/Prism_down.png" id="3_x54tl"]
+[ext_resource type="Texture2D" uid="uid://bs0yjj2i3mswb" path="res://assets/textures/sprites/machines/prism/Prism_left.png" id="4_26ks3"]
+[ext_resource type="Texture2D" uid="uid://jcw50remnmxk" path="res://assets/textures/sprites/machines/prism/Prism_up.png" id="5_1ylmd"]
 [ext_resource type="Texture2D" uid="uid://dkwux107kqgd6" path="res://assets/textures/sprites/machines/collector/collector_interior/collector_interior_rightfacing.png" id="6_1ylmd"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ab70d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o6fmf"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ab70d"]
+
 [node name="rootNode" type="Node2D"]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." groups=["Machines"]]
+[node name="RigidBody2D" type="RigidBody2D" parent="." node_paths=PackedStringArray("sprite") groups=["Interact", "Machines"]]
 freeze = true
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" groups=["Particles"]]
-texture_filter = 1
-texture = ExtResource("2_lx3um")
-
-[node name="Area2D" type="Area2D" parent="RigidBody2D/Sprite2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Sprite2D/Area2D"]
-scale = Vector2(0.667034, 0.667034)
-shape = SubResource("RectangleShape2D_ab70d")
-
-[node name="inside_sprite" type="Sprite2D" parent="RigidBody2D/Sprite2D"]
-modulate = Color(0, 0.833333, 1, 0.188235)
-texture = ExtResource("6_1ylmd")
+script = ExtResource("1_ls4lb")
+sprite_right = ExtResource("3_x54tl")
+sprite_down = ExtResource("4_26ks3")
+sprite_left = ExtResource("5_1ylmd")
+sprite_up = ExtResource("2_4nelt")
+speed = 100.0
+spawn_distance = 15.0
+sprite = NodePath("../Sprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 scale = Vector2(0.624173, 0.624173)
@@ -33,5 +31,19 @@ shape = SubResource("RectangleShape2D_o6fmf")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.25
 autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("3_x54tl")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+scale = Vector2(0.667034, 0.667034)
+shape = SubResource("RectangleShape2D_ab70d")
+
+[node name="inside_sprite" type="Sprite2D" parent="Sprite2D"]
+modulate = Color(0, 0.833333, 1, 0.188235)
+texture = ExtResource("6_1ylmd")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
