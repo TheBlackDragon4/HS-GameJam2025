@@ -22,10 +22,13 @@ var hotbarPos = 1
 
 var currentSlot
 
+@onready var hotbarRef = $Camera2D/NinePatchRect
+
+
 #scan tile at px position and interact with it
 func _ready() -> void:
 	tabCount = _map_buildings["tile_set"].get_source_count()
-	scenesIndex = $"../NinePatchRect".get_child(0).get_child(0).get_meta("MenuToItem")[selected_menu]
+	scenesIndex = hotbarRef.get_child(0).get_child(0).get_meta("MenuToItem")[selected_menu]
 	#scenesCount = _map_buildings["tile_set"].get_source(0).get_alternative_tiles_count(Vector2i(0, 0)) 
 
 func _physics_process(_delta: float) -> void:
@@ -72,50 +75,58 @@ func handle_inputs() -> void:
 		print("rotate")
 		
 	if Input.is_action_just_pressed("tab left"):
+		hotbarRef.visible = true
+		hotbarRef.get_child(0).get_child(0).grab_focus()
 		print("tab-left", scenesIndex)
 		tab = posmod((tab-1), tabCount)
 		#scenesCount = _map_buildings["tile_set"].get_source(tab).get_alternative_tiles_count(Vector2i(0, 0)) 
 		
 		if (selected_menu+2)%2 == 0:
 			selected_menu = 1
-			$"../NinePatchRect".get_node("Label").text = "Machines"
+			hotbarRef.get_node("Label").text = "Machines"
 		elif (selected_menu+2)%2 == 1:
 			selected_menu = 0
-			$"../NinePatchRect".get_node("Label").text = "Buildings"
-		for slot in $"../NinePatchRect/Hotbar".get_children():
+			hotbarRef.get_node("Label").text = "Buildings"
+		for slot in hotbarRef.get_node("Hotbar").get_children():
 			slot.get_node("CenterContainer/ItemPicture").texture = \
 				slot.get_meta("MenuToImage")[selected_menu]
 			
 	if Input.is_action_just_pressed("tab right"):
+		hotbarRef.visible = true
+		hotbarRef.get_child(0).get_child(0).grab_focus()
 		print("tab-right", scenesIndex)
 		tab = posmod((tab+1), tabCount)
 		#scenesCount = _map_buildings["tile_set"].get_source(tab).get_alternative_tiles_count(Vector2i(0, 0))  
 		if (selected_menu+2)%2 == 0:
 			selected_menu = 1
-			$"../NinePatchRect".get_node("Label").text = "Machines"
+			hotbarRef.get_node("Label").text = "Machines"
 		elif (selected_menu+2)%2 == 1:
 			selected_menu = 0
-			$"../NinePatchRect".get_node("Label").text = "Buildings"
-		for slot in $"../NinePatchRect/Hotbar".get_children():
+			hotbarRef.get_node("Label").text = "Buildings"
+		for slot in hotbarRef.get_node("Hotbar").get_children():
 			slot.get_node("CenterContainer/ItemPicture").texture = \
 				slot.get_meta("MenuToImage")[selected_menu]
 
 	if Input.is_action_just_pressed("menu left"):
+		hotbarRef.visible = true
+		#hotbarRef.get_child(0).get_child(0).grab_focus()
 		scenesIndex = get_viewport().gui_get_focus_owner().get_meta("MenuToItem")[selected_menu]
 		print("menu left", scenesIndex)
 		
 	if Input.is_action_just_pressed("menu right"):
+		hotbarRef.visible = true
+		#print(hotbarRef.get_child(0).get_child(0))
+		#hotbarRef.get_child(0).get_child(0).grab_focus()
 		scenesIndex = get_viewport().gui_get_focus_owner().get_meta("MenuToItem")[selected_menu]
 		print("menu right", scenesIndex)
 
 	if Input.is_action_just_pressed("hud"):
-		var temp =  $"../NinePatchRect"
 		print("z/OS")
-		if temp.visible == true:
-			temp.visible = false
+		if hotbarRef.visible == true:
+			hotbarRef.visible = false
 		else:
-			temp.visible = true
-			temp.get_child(0).get_child(0).grab_focus()
+			hotbarRef.visible = true
+			hotbarRef.get_child(0).get_child(0).grab_focus()
 	#$HotbarSlot.
 		#get_viewport().gui_get_focus_owner().
 		

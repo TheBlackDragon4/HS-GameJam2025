@@ -91,6 +91,12 @@ shadow_enabled = true
 texture = ExtResource("2_qlg0r")
 texture_scale = 2.0
 
+[node name="NinePatchRect" parent="CharacterBody2D/Camera2D" instance=ExtResource("7_fjrip")]
+offset_left = -89.0
+offset_top = 129.0
+offset_right = -89.0
+offset_bottom = 129.0
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 z_index = 1000
 material = SubResource("CanvasItemMaterial_qlg0r")
@@ -100,5 +106,3 @@ script = ExtResource("4_qlg0r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_4flbx")
-
-[node name="NinePatchRect" parent="." instance=ExtResource("7_fjrip")]

@@ -20,7 +20,9 @@ texture = ExtResource("1_hqoo7")
 [node name="Area2D" type="Area2D" parent="RigidBody2D/Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Sprite2D/Area2D"]
+scale = Vector2(0.68704, 0.68704)
 shape = SubResource("RectangleShape2D_ab70d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+scale = Vector2(0.6515, 0.6515)
 shape = SubResource("RectangleShape2D_o6fmf")

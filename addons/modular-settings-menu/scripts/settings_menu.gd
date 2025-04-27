@@ -84,12 +84,12 @@ func ignore_sections() -> void:
 		if IGNORED_SECTIONS_.has(SectionRef.IDENTIFIER):
 			SectionRef.queue_free()
 
-func _input(event: InputEvent) -> void:
-	if event is InputEventKey:
-		if event.is_action_pressed("ui_right"):
-			move_tab(1)
-		if event.is_action_pressed("ui_left"):
-			move_tab(-1)
+#func _input(event: InputEvent) -> void:
+	#if event is InputEventKey:
+		#if event.is_action_pressed("ui_right"):
+			#move_tab(1)
+		#if event.is_action_pressed("ui_left"):
+			#move_tab(-1)
 	
 func move_tab(delta: int) -> void:
 	SettingsTabsRef.current_tab = posmod(SettingsTabsRef.current_tab + delta, SettingsTabsRef.get_tab_count())

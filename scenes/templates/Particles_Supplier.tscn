@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0dm6ua1pu1g0"]
+[gd_scene load_steps=2 format=3 uid="uid://be6ea0sv64d6o"]
 
 [ext_resource type="Script" uid="uid://bw5wdtuymturw" path="res://scenes/templates/particles_supplier.gd" id="1_becfb"]
 

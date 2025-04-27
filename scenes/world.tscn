@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://clwopr1x8gql0" path="res://scenes/TileMap.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://ql6yjbm5rt2o" path="res://scripts/world.gd" id="1_tlwt5"]
-[ext_resource type="PackedScene" uid="uid://ctgafr46hl2w8" path="res://ui/defaultUIElement.tscn" id="2_jhx03"]
+[ext_resource type="PackedScene" path="res://ui/defaultUIElement.tscn" id="2_jhx03"]
 [ext_resource type="PackedScene" uid="uid://bktwhar36vufn" path="res://scenes/templates/building.tscn" id="4_71j4m"]
 [ext_resource type="PackedScene" uid="uid://hu8dcylc7sti" path="res://scenes/templates/building with light source.tscn" id="5_qfnet"]
 [ext_resource type="Texture2D" uid="uid://dhb3gbgtdsbia" path="res://assets/textures/backgrounds/blumenwiese.png" id="6_q5onr"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://drvg4dkmn8fv6" path="res://scenes/world_border.tscn" id="8_dss4m"]
 [ext_resource type="Texture2D" uid="uid://caa6n4d0h5o6m" path="res://assets/textures/backgrounds/sand.png" id="11_7t5mc"]
 [ext_resource type="Texture2D" uid="uid://dljojwqigg53f" path="res://assets/textures/icon.svg" id="14_o8fc1"]
-[ext_resource type="PackedScene" uid="uid://c0dm6ua1pu1g0" path="res://scenes/templates/Particles_Supplier.tscn" id="14_xo05s"]
+[ext_resource type="PackedScene" uid="uid://be6ea0sv64d6o" path="res://scenes/templates/Particles_Supplier.tscn" id="14_xo05s"]
 [ext_resource type="PackedScene" uid="uid://cqngyq22qcvt5" path="res://scenes/player.tscn" id="16_dss4m"]
 [ext_resource type="Texture2D" uid="uid://b83uh2ih7pfbv" path="res://assets/textures/backgrounds/sand_1.png" id="16_lakw3"]
 [ext_resource type="Texture2D" uid="uid://cctcsylsj4xal" path="res://assets/textures/backgrounds/sand_2.png" id="17_pm21f"]
