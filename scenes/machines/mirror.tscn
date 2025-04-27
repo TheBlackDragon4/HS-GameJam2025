@@ -27,7 +27,7 @@ sprite = NodePath("../../Sprite2D")
 position = Vector2(-1, -1)
 polygon = PackedVector2Array(-3, -4, 6, 5, 3, 5, -3, -1)
 
-[node name="Back_Side_Body2D" type="RigidBody2D" parent="Node2D/RigidBody2D" groups=["Absorb"]]
+[node name="Back_Side_Body2D" type="RigidBody2D" parent="Node2D/RigidBody2D"]
 freeze = true
 script = ExtResource("6_ltx65")
 
