@@ -36,6 +36,7 @@ enabled=PackedStringArray("res://addons/modular-settings-menu/plugin.cfg")
 Machines=""
 Absorb=""
 Light=""
+Block=""
 
 [input]
 
