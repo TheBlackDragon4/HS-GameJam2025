@@ -80,6 +80,7 @@ disabled = true
 text = "Apply"
 
 [node name="BackButton" type="Button" parent="SettingsPanel/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qp71p")

@@ -1,62 +1,62 @@
 {
 	"up": {
 		"type": "keyboard",
-		"key": 0
+		"key": 87
 	},
 	"down": {
 		"type": "keyboard",
-		"key": 0
+		"key": 83
 	},
 	"left": {
 		"type": "keyboard",
-		"key": 0
+		"key": 65
 	},
 	"right": {
 		"type": "keyboard",
-		"key": 0
+		"key": 68
 	},
 	"interact": {
-		"type": "mouse",
-		"button": 1
+		"type": "keyboard",
+		"key": 85
 	},
 	"build": {
-		"type": "mouse",
-		"button": 2
+		"type": "keyboard",
+		"key": 73
 	},
 	"rotate": {
 		"type": "keyboard",
-		"key": 0
+		"key": 79
 	},
 	"destroy": {
 		"type": "keyboard",
-		"key": 0
+		"key": 80
 	},
 	"menu left": {
 		"type": "keyboard",
-		"key": 0
+		"key": 74
 	},
 	"menu right": {
 		"type": "keyboard",
-		"key": 0
+		"key": 75
 	},
 	"tab left": {
 		"type": "keyboard",
-		"key": 0
+		"key": 72
 	},
 	"tab right": {
 		"type": "keyboard",
-		"key": 0
+		"key": 76
 	},
 	"flip": {
 		"type": "keyboard",
-		"key": 0
+		"key": 4194312
 	},
 	"hud": {
 		"type": "keyboard",
-		"key": 0
+		"key": 4194309
 	},
 	"escape": {
 		"type": "keyboard",
-		"key": 0
+		"key": 4194305
 	}
 }
