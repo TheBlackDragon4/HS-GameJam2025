@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bktwhar36vufn" path="res://scenes/templates/building.tscn" id="4_xgqkh"]
 [ext_resource type="PackedScene" uid="uid://hu8dcylc7sti" path="res://scenes/templates/building with light source.tscn" id="5_munwf"]
 [ext_resource type="PackedScene" uid="uid://drvg4dkmn8fv6" path="res://scenes/world_border.tscn" id="6_ts3gi"]
-[ext_resource type="PackedScene" uid="uid://cff6xn0jxgyfh" path="res://scenes/particle.tscn" id="7_0nbtd"]
+[ext_resource type="PackedScene" uid="uid://cff6xn0jxgyfh" path="res://scenes/fireflies.tscn" id="7_0nbtd"]
 [ext_resource type="PackedScene" uid="uid://c8nvoj8fbmku" path="res://scenes/machines/collector.tscn" id="8_37qwj"]
 [ext_resource type="PackedScene" uid="uid://0v1n5rj0a56" path="res://scenes/machines/dispenser.tscn" id="9_navra"]
 [ext_resource type="Texture2D" uid="uid://df2miwamr8ttc" path="res://assets/textures/sprites/machines/collector/Collector_rotations-3.png.png" id="10_munwf"]

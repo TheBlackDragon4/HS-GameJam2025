@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://rw7gdui8lu3n"]
 
-[ext_resource type="Script" path="res://addons/EasyMenus/Scripts/pause_menu_controller.gd" id="1_5etq0"]
+[ext_resource type="Script" uid="uid://cwdbyt1jnd4k3" path="res://addons/EasyMenus/Scripts/pause_menu_controller.gd" id="1_5etq0"]
 [ext_resource type="PackedScene" uid="uid://qlskttl1wjr7" path="res://addons/EasyMenus/Scenes/options_menu.tscn" id="2_ejh0f"]
 [ext_resource type="PackedScene" uid="uid://px6a2dg8cawb" path="res://addons/modular-settings-menu/scenes/settings.tscn" id="3_yhvkm"]
 
