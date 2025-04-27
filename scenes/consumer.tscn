@@ -5,8 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://nd6enmopt6pe" path="res://assets/textures/point light.png" id="3_lwkdp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ab70d"]
+size = Vector2(14, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o6fmf"]
+size = Vector2(14, 14)
 
 [node name="Node2D" type="Node2D"]
 
@@ -29,14 +31,11 @@ texture_filter = 1
 texture = ExtResource("2_7lig4")
 
 [node name="Area2D" type="Area2D" parent="RigidBody2D/Sprite2D"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Sprite2D/Area2D"]
-visible = false
 shape = SubResource("RectangleShape2D_ab70d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-visible = false
 shape = SubResource("RectangleShape2D_o6fmf")
 
 [node name="PointLight2D" type="PointLight2D" parent="RigidBody2D"]
