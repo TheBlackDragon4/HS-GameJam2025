@@ -57,8 +57,13 @@ func addColor(inputColor : Color):
 	var val = max(current_color.r, current_color.g, current_color.b)
 	pointlight.scale = Vector2(val, val)
 	
-	$Label.text =  \
-		str(current_color.r8) + "-" + str(current_color.g8) + "-" + str(current_color.b8)
+	if current_color.r8 == max_colors[0] and \
+		current_color.g8 == max_colors[1] and \
+		current_color.b8 == max_colors[2]:
+			$Label.text = "FULL!"
+	else:
+		$Label.text =  \
+			str(current_color.r8) + "-" + str(current_color.g8) + "-" + str(current_color.b8)
 		  #"r: " + str(current_color.r8) + \
 		#"\ng: " + str(current_color.g8) + \
 		#"\nb: " + str(current_color.b8)
