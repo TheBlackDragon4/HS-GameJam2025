@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b245af5i32bwl"]
+[gd_scene load_steps=7 format=3 uid="uid://b245af5i32bwl"]
 
 [ext_resource type="Script" uid="uid://cky4vhodjnjnw" path="res://scripts/collector.gd" id="1_ab70d"]
 [ext_resource type="Texture2D" uid="uid://0pivhaqebcfs" path="res://assets/textures/collector.png" id="1_hqoo7"]
+[ext_resource type="PackedScene" uid="uid://c0dm6ua1pu1g0" path="res://scenes/templates/Particles_Supplier.tscn" id="3_ti3kk"]
+[ext_resource type="Texture2D" uid="uid://5dmefntgos2o" path="res://assets/textures/Particle_light.png" id="4_6lwxd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ab70d"]
 
@@ -12,7 +14,7 @@ script = ExtResource("1_ab70d")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" groups=["Particles"]]
 modulate = Color(2.31028e-06, 0.762958, 0.944061, 1)
 texture_filter = 1
 texture = ExtResource("1_hqoo7")
@@ -21,6 +23,13 @@ texture = ExtResource("1_hqoo7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Sprite2D/Area2D"]
 shape = SubResource("RectangleShape2D_ab70d")
+
+[node name="CPUParticles2D" parent="RigidBody2D/Sprite2D" node_paths=PackedStringArray("source") instance=ExtResource("3_ti3kk")]
+position = Vector2(1, 1)
+texture = ExtResource("4_6lwxd")
+source = NodePath("../../..")
+velocity = 10.0
+range = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("RectangleShape2D_o6fmf")
