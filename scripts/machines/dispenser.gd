@@ -53,12 +53,12 @@ func rotate_90():
 
 func _on_timer_timeout() -> void:
 	if charges.size() > 0:
-		print("shooot out with ", charges.size(), " remaining")
+		#print("shooot out with ", charges.size(), " remaining")
 		#charge -= 1
 		fire(charges.pop_front())
 	
 func absorb(is_dropped=false, color : Color = Color(1,1,1)):
-	print("yumm?")
+	#print("yumm?")
 	if is_dropped:
-		print(" eat that light dispenser.. ")
+		#print(" eat that light dispenser.. ")
 		charges.append(color)
