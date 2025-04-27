@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://sbns2q18gdd6"]
+[gd_scene load_steps=68 format=4 uid="uid://sbns2q18gdd6"]
 
 [ext_resource type="Script" uid="uid://ql6yjbm5rt2o" path="res://scripts/world.gd" id="1_oo54l"]
 [ext_resource type="PackedScene" uid="uid://ctgafr46hl2w8" path="res://ui/defaultUIElement.tscn" id="2_kpybi"]
@@ -13,14 +13,26 @@
 [ext_resource type="PackedScene" uid="uid://bto8f7wq4b34h" path="res://scenes/machines/prism.tscn" id="12_rup4s"]
 [ext_resource type="Texture2D" uid="uid://br0e8l0xesyfc" path="res://assets/textures/backgrounds/Tree_pine.png" id="13_4kbfs"]
 [ext_resource type="PackedScene" uid="uid://b0n3bd0sdpksi" path="res://scenes/Stream_curve.tscn" id="14_f17e3"]
+[ext_resource type="Texture2D" uid="uid://b3hpea5uuuoyc" path="res://assets/textures/backgrounds/Floor_stone.png" id="15_rup4s"]
 [ext_resource type="PackedScene" uid="uid://b6ka413p76fuy" path="res://scenes/Stream_straight.tscn" id="15_x2olw"]
+[ext_resource type="Texture2D" uid="uid://ckddfnnodeltr" path="res://assets/textures/backgrounds/Floor_wooden.png" id="16_4kbfs"]
 [ext_resource type="Texture2D" uid="uid://dw5oux7d1oyf5" path="res://assets/textures/backgrounds/holz.png" id="16_817gm"]
+[ext_resource type="Texture2D" uid="uid://b1tgtq42pnl6g" path="res://assets/textures/backgrounds/Flowerfield.png" id="17_f17e3"]
 [ext_resource type="Texture2D" uid="uid://caa6n4d0h5o6m" path="res://assets/textures/backgrounds/sand.png" id="17_ggc52"]
 [ext_resource type="Texture2D" uid="uid://b83uh2ih7pfbv" path="res://assets/textures/backgrounds/sand_1.png" id="18_l8ah6"]
+[ext_resource type="Texture2D" uid="uid://4m5rv0c62isd" path="res://assets/textures/backgrounds/Forestfloor.png" id="18_x2olw"]
+[ext_resource type="Texture2D" uid="uid://di03agj2psovy" path="res://assets/textures/backgrounds/Grass.png" id="19_817gm"]
 [ext_resource type="Texture2D" uid="uid://cctcsylsj4xal" path="res://assets/textures/backgrounds/sand_2.png" id="19_e75v4"]
 [ext_resource type="Texture2D" uid="uid://dhb3gbgtdsbia" path="res://assets/textures/backgrounds/blumenwiese.png" id="20_8u370"]
+[ext_resource type="Texture2D" uid="uid://h1knd1sdvood" path="res://assets/textures/backgrounds/Ocean.png" id="21_ggc52"]
 [ext_resource type="Texture2D" uid="uid://djfr6eohe1me4" path="res://assets/textures/backgrounds/Tree_oak.png" id="21_rga7q"]
 [ext_resource type="PackedScene" uid="uid://cqngyq22qcvt5" path="res://scenes/player.tscn" id="22_6oujy"]
+[ext_resource type="Texture2D" uid="uid://ki6ueciyxmc7" path="res://assets/textures/backgrounds/Ocean_coast.png" id="22_l8ah6"]
+[ext_resource type="Texture2D" uid="uid://dfk1l7gr2o3gt" path="res://assets/textures/backgrounds/Roof.png" id="23_e75v4"]
+[ext_resource type="Texture2D" uid="uid://chmeurmpwji7o" path="res://assets/textures/backgrounds/Snow_1.png" id="27_8u370"]
+[ext_resource type="Texture2D" uid="uid://oe1afgyt76ws" path="res://assets/textures/backgrounds/Snow_2.png" id="28_rga7q"]
+[ext_resource type="Texture2D" uid="uid://bited6du84w8p" path="res://assets/textures/backgrounds/Wall_stone.png" id="30_6oujy"]
+[ext_resource type="Texture2D" uid="uid://cjswur4m8na86" path="res://assets/textures/backgrounds/Wall_wood.png" id="31_hi6a0"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_i7141"]
 resource_name = "Buildings"
@@ -54,9 +66,87 @@ scenes/1/scene = ExtResource("6_ts3gi")
 scenes/2/scene = ExtResource("14_f17e3")
 scenes/3/scene = ExtResource("15_x2olw")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eo1xk"]
+texture = ExtResource("15_rup4s")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_18clu"]
+texture = ExtResource("16_4kbfs")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wdv8"]
+texture = ExtResource("17_f17e3")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d46x8"]
+texture = ExtResource("18_x2olw")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3l05q"]
+texture = ExtResource("19_817gm")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x28ej"]
+texture = ExtResource("16_817gm")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1jxku"]
+texture = ExtResource("21_ggc52")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1dgkn"]
+texture = ExtResource("22_l8ah6")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e68xj"]
+texture = ExtResource("23_e75v4")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5hglh"]
+texture = ExtResource("17_ggc52")
+0:0/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ts3gi"]
 texture = ExtResource("16_817gm")
 0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qg546"]
+texture = ExtResource("18_l8ah6")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pf35h"]
+texture = ExtResource("19_e75v4")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iexy4"]
+texture = ExtResource("27_8u370")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_npbic"]
+texture = ExtResource("28_rga7q")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e6ckp"]
+texture = ExtResource("21_rga7q")
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mvg0v"]
+texture = ExtResource("13_4kbfs")
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h3odw"]
+texture = ExtResource("30_6oujy")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5hl1e"]
+texture = ExtResource("31_hi6a0")
+0:0/0 = 0
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_66tox"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0nbtd"]
 texture = ExtResource("17_ggc52")
@@ -74,11 +164,19 @@ texture = ExtResource("19_e75v4")
 texture = ExtResource("20_8u370")
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pq8jk"]
+texture = ExtResource("19_817gm")
+0:0/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7t5mc"]
 texture = ExtResource("21_rga7q")
 0:0/0 = 0
 0:1/0 = 0
 0:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q57r8"]
+texture = ExtResource("20_8u370")
+0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_jhx03"]
 sources/2 = SubResource("TileSetAtlasSource_ts3gi")
@@ -89,6 +187,27 @@ sources/1 = SubResource("TileSetScenesCollectionSource_q5onr")
 sources/6 = SubResource("TileSetAtlasSource_munwf")
 sources/0 = SubResource("TileSetAtlasSource_dss4m")
 sources/8 = SubResource("TileSetAtlasSource_7t5mc")
+sources/7 = SubResource("TileSetAtlasSource_pq8jk")
+sources/9 = SubResource("TileSetAtlasSource_q57r8")
+sources/10 = SubResource("TileSetAtlasSource_eo1xk")
+sources/11 = SubResource("TileSetAtlasSource_18clu")
+sources/12 = SubResource("TileSetAtlasSource_4wdv8")
+sources/13 = SubResource("TileSetAtlasSource_d46x8")
+sources/14 = SubResource("TileSetAtlasSource_3l05q")
+sources/15 = SubResource("TileSetAtlasSource_x28ej")
+sources/16 = SubResource("TileSetAtlasSource_1jxku")
+sources/17 = SubResource("TileSetAtlasSource_1dgkn")
+sources/18 = SubResource("TileSetAtlasSource_e68xj")
+sources/19 = SubResource("TileSetAtlasSource_5hglh")
+sources/20 = SubResource("TileSetAtlasSource_qg546")
+sources/21 = SubResource("TileSetAtlasSource_pf35h")
+sources/22 = SubResource("TileSetAtlasSource_iexy4")
+sources/23 = SubResource("TileSetAtlasSource_npbic")
+sources/24 = SubResource("TileSetAtlasSource_e6ckp")
+sources/25 = SubResource("TileSetAtlasSource_mvg0v")
+sources/26 = SubResource("TileSetAtlasSource_h3odw")
+sources/27 = SubResource("TileSetAtlasSource_5hl1e")
+sources/29 = SubResource("TileSetScenesCollectionSource_66tox")
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_oo54l")
@@ -97,7 +216,7 @@ script = ExtResource("1_oo54l")
 world_hidden_mouse = true
 
 [node name="builds" parent="." instance=ExtResource("3_ctatt")]
-tile_map_data = PackedByteArray("AAD7//v/AAAAAAAAAgAEAPv/AAAAAAAAAgD7/wQAAAAAAAAAAgD6//7/AAAAAAAAAgD6/wEAAAAAAAAAAgAFAAEAAAAAAAAAAgAFAP7/AAAAAAAAAgAEAAQAAAAAAAAAAgD9//3/AQAAAAAAAgACAP3/AQAAAAAAAQADAP3/AQAAAAAAAgA=")
+tile_map_data = PackedByteArray("AAD7//v/AAAAAAAAAgAEAPv/AAAAAAAAAgD7/wQAAAAAAAAAAgD6//7/AAAAAAAAAgD6/wEAAAAAAAAAAgAFAAEAAAAAAAAAAgAFAP7/AAAAAAAAAgAEAAQAAAAAAAAAAgABAP3/AQAAAAAAAwD9//3/AQAAAAAAAgA=")
 tile_set = SubResource("TileSet_tlwt5")
 
 [node name="backgrounds" parent="." instance=ExtResource("3_ctatt")]

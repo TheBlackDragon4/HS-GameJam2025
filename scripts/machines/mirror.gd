@@ -8,7 +8,7 @@ extends Node2D
 
 @export var sprite:Sprite2D
 
-var rotation_state = 0
+var rotation_state = 1
 var cooldown = 1 #in s
 @onready var light = preload("res://scenes/light.tscn")
 var shots = 0
