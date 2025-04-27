@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b0n3bd0sdpksi" path="res://scenes/Stream_curve.tscn" id="8_7t5mc"]
 [ext_resource type="PackedScene" uid="uid://drvg4dkmn8fv6" path="res://scenes/world_border.tscn" id="8_dss4m"]
 [ext_resource type="PackedScene" uid="uid://b6ka413p76fuy" path="res://scenes/Stream_straight.tscn" id="9_lakw3"]
+[ext_resource type="PackedScene" uid="uid://chbvnuvvr8urx" path="res://scenes/consumer.tscn" id="9_7t5mc"]
 [ext_resource type="Texture2D" uid="uid://caa6n4d0h5o6m" path="res://assets/textures/backgrounds/sand.png" id="11_7t5mc"]
 [ext_resource type="Texture2D" uid="uid://djfr6eohe1me4" path="res://assets/textures/backgrounds/Tree_oak.png" id="13_xo05s"]
 [ext_resource type="PackedScene" uid="uid://cqngyq22qcvt5" path="res://scenes/player.tscn" id="16_dss4m"]
@@ -29,6 +30,7 @@ scenes/4/scene = ExtResource("7_dss4m")
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_jhx03"]
 resource_name = "Machines"
 scenes/1/scene = ExtResource("8_4mrxx")
+scenes/2/scene = ExtResource("9_7t5mc")
 
 [sub_resource type="TileSet" id="TileSet_tlwt5"]
 sources/0 = SubResource("TileSetScenesCollectionSource_i7141")
