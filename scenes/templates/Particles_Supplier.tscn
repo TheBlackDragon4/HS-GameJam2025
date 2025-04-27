@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://bw5wdtuymturw" path="res://scenes/templates/particles_supplier.gd" id="1_becfb"]
 
 [node name="CPUParticles2D" type="CPUParticles2D"]
+direction = Vector2(0, 0)
+spread = 0.0
+gravity = Vector2(0, 0)
 script = ExtResource("1_becfb")
 
 [connection signal="ready" from="." to="." method="_on_ready"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cff6xn0jxgyfh"]
 
-[ext_resource type="Texture2D" uid="uid://bgmf7803031o0" path="res://assets/textures/Glühwürmchen.png" id="1_jw3tu"]
+[ext_resource type="Texture2D" uid="uid://bgmf7803031o0" path="res://assets/textures/glühwürmchen.png" id="1_jw3tu"]
 
 [sub_resource type="Curve" id="Curve_jw3tu"]
 _limits = [0.0, 200.0, 0.0, 1.0]
@@ -19,7 +19,8 @@ emission_ring_radius = 50.0
 emission_ring_inner_radius = 10.0
 emission_ring_cone_angle = 90.0
 gravity = Vector3(0, 0, 0)
-scale_min = 0.4
+scale_min = 0.2
+scale_max = 0.4
 anim_speed_min = 0.4
 anim_speed_max = 1.0
 anim_speed_curve = SubResource("CurveTexture_y25om")
@@ -30,6 +31,7 @@ anim_speed_curve = SubResource("CurveTexture_y25om")
 self_modulate = Color(1, 1, 1, 0.196078)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="2D Object"]
-amount = 40
+scale = Vector2(0.329082, 0.329082)
+amount = 20
 texture = ExtResource("1_jw3tu")
 process_material = SubResource("ParticleProcessMaterial_y25om")
