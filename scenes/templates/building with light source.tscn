@@ -21,6 +21,7 @@ shape = SubResource("RectangleShape2D_5j34s")
 blend_mode = 2
 range_layer_max = 1
 shadow_enabled = true
+shadow_color = Color(0.165656, 0.165656, 0.165656, 1)
 texture = ExtResource("2_rx0vn")
 
 [node name="InnerLightingSprite2D" type="Sprite2D" parent="Sprite2D"]

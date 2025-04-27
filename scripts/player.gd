@@ -1,8 +1,11 @@
 extends CharacterBody2D
 
-@onready var _map_buildings = get_parent().get_parent().find_child("builds")
 
+@export var root_hotbar: NinePatchRect
 @export var _movementspeed = 100
+
+@onready var _map_buildings = get_parent().get_parent().find_child("builds")
+@onready var hotbar = root_hotbar.get_child(0)
 
 var _grid_size = 16
 
@@ -13,8 +16,8 @@ var selected_menu = 0
 
 var tab = 0
 var tabCount = 1
-var scenesIndex = -1
-#var scenesCount = 2
+var scenesIndex = 1
+var scenesCount = 1
 
 var orientation = 0 # 0 = left, 1 = right
 
@@ -25,8 +28,7 @@ var currentSlot
 #scan tile at px position and interact with it
 func _ready() -> void:
 	tabCount = _map_buildings["tile_set"].get_source_count()
-	scenesIndex = $"../NinePatchRect".get_child(0).get_child(0).get_meta("MenuToItem")[selected_menu]
-	#scenesCount = _map_buildings["tile_set"].get_source(0).get_alternative_tiles_count(Vector2i(0, 0)) 
+	scenesCount = _map_buildings["tile_set"].get_source(0).get_alternative_tiles_count(Vector2i(0, 0)) 
 
 func _physics_process(_delta: float) -> void:
 	handle_movement()
@@ -61,52 +63,30 @@ func handle_movement() -> void:
 func handle_inputs() -> void:
 	if Input.is_action_just_pressed("destroy"):
 		print("destroy")
-		_map_buildings.set_cell(selected_tile, 0, Vector2i(0, 0))
-	if Input.is_action_just_pressed("build"):
-		print("build")
-		print("build:", scenesIndex)
+		_map_buildings.set_cell(selected_tile, 0, Vector2i(-1, -1))
 		
-		_map_buildings.set_cell(selected_tile, selected_menu, Vector2i(0, 0), scenesIndex)
+	if Input.is_action_just_pressed("build"):
+		print("build:", tab, " ", scenesIndex)
+		_map_buildings.set_cell(selected_tile, tab, Vector2i(0, 0), scenesIndex)
 	
 	if Input.is_action_just_pressed("rotate"):
-		print("rotate")
+		print("TODO: rotate")
 		
 	if Input.is_action_just_pressed("tab left"):
-		print("tab-left", scenesIndex)
 		tab = posmod((tab-1), tabCount)
-		#scenesCount = _map_buildings["tile_set"].get_source(tab).get_alternative_tiles_count(Vector2i(0, 0)) 
+		process_new_tab()
 		
-		if (selected_menu+2)%2 == 0:
-			selected_menu = 1
-			$"../NinePatchRect".get_node("Label").text = "Machines"
-		elif (selected_menu+2)%2 == 1:
-			selected_menu = 0
-			$"../NinePatchRect".get_node("Label").text = "Buildings"
-		for slot in $"../NinePatchRect/Hotbar".get_children():
-			slot.get_node("CenterContainer/ItemPicture").texture = \
-				slot.get_meta("MenuToImage")[selected_menu]
-			
 	if Input.is_action_just_pressed("tab right"):
-		print("tab-right", scenesIndex)
 		tab = posmod((tab+1), tabCount)
-		#scenesCount = _map_buildings["tile_set"].get_source(tab).get_alternative_tiles_count(Vector2i(0, 0))  
-		if (selected_menu+2)%2 == 0:
-			selected_menu = 1
-			$"../NinePatchRect".get_node("Label").text = "Machines"
-		elif (selected_menu+2)%2 == 1:
-			selected_menu = 0
-			$"../NinePatchRect".get_node("Label").text = "Buildings"
-		for slot in $"../NinePatchRect/Hotbar".get_children():
-			slot.get_node("CenterContainer/ItemPicture").texture = \
-				slot.get_meta("MenuToImage")[selected_menu]
+		process_new_tab()
 
 	if Input.is_action_just_pressed("menu left"):
-		scenesIndex = get_viewport().gui_get_focus_owner().get_meta("MenuToItem")[selected_menu]
-		print("menu left", scenesIndex)
+		scenesIndex = posmod(scenesIndex-2, scenesCount)+1
+		process_new_menu()
 		
 	if Input.is_action_just_pressed("menu right"):
-		scenesIndex = get_viewport().gui_get_focus_owner().get_meta("MenuToItem")[selected_menu]
-		print("menu right", scenesIndex)
+		scenesIndex = posmod(scenesIndex, scenesCount)+1
+		process_new_menu()
 
 	if Input.is_action_just_pressed("hud"):
 		var temp =  $"../NinePatchRect"
@@ -116,6 +96,22 @@ func handle_inputs() -> void:
 		else:
 			temp.visible = true
 			temp.get_child(0).get_child(0).grab_focus()
+
+func process_new_tab():
+		scenesIndex = 1
+		print("new tab: ", tab)
+		scenesCount = \
+			_map_buildings["tile_set"].get_source(tab).get_alternative_tiles_count(Vector2i(0, 0)) 
+		root_hotbar.get_node("Label").text = \
+			_map_buildings["tile_set"].get_source(tab).resource_name
+			
+		for slot in hotbar.get_children():
+			slot.get_node("CenterContainer/ItemPicture").texture = \
+				slot.get_meta("MenuToImage")[tab]
+		hotbar.get_child(scenesIndex-1).grab_focus()
+func process_new_menu():
+	print("new menu index: ", scenesIndex)
+	hotbar.get_child(scenesIndex-1).grab_focus()
 	#$HotbarSlot.
 		#get_viewport().gui_get_focus_owner().
 		

@@ -169,7 +169,7 @@ func verify_settings_data(data_: Dictionary) -> void:
 		if not data_.has(action) || (data_[action].has(\"key\") and data_[action][\"key\"] == 0):
 			data_[action] = InputMap.action_get_events(action)[0]
 			invalidSaveFile = true
-			push_warning(\"Input action is missing: \", action)
+			push_warning(\"Input action is missing or invalid ascii: \", action)
 
 
 # Sollte erst bei Apply aufgerufen werden

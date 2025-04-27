@@ -1,6 +1,5 @@
 extends Button
 class_name ButtonElement
-
 ## Reference to the element's panel scene.
 @export var ElementPanelScene: PackedScene
 

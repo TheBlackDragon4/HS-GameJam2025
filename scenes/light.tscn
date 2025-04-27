@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bcimtslontlab"]
 
-[ext_resource type="Texture2D" uid="uid://c2djy5e1pwn1o" path="res://assets/textures/point light.jpg" id="1_24oxn"]
+[ext_resource type="Texture2D" uid="uid://nd6enmopt6pe" path="res://assets/textures/point light.png" id="1_24oxn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eaa0b"]
 
@@ -16,4 +16,6 @@ scale = Vector2(0.3, 0.3)
 energy = 0.2
 blend_mode = 2
 range_layer_max = 1
+shadow_enabled = true
+shadow_color = Color(0.164706, 0.164706, 0.164706, 1)
 texture = ExtResource("1_24oxn")

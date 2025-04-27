@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://drvg4dkmn8fv6"]
 
 [ext_resource type="Texture2D" uid="uid://bssu7pqnjhrd8" path="res://assets/textures/spritesheet_fog.png" id="1_gs6km"]
-[ext_resource type="Script" path="res://scripts/animated_sprite_2d.gd" id="2_sxw8n"]
+[ext_resource type="Script" uid="uid://diuxhmsynjoyb" path="res://scripts/animated_sprite_2d.gd" id="2_sxw8n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sxw8n"]
 atlas = ExtResource("1_gs6km")
