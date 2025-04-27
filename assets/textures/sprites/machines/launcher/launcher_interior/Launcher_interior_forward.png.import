@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6vjptmxgw0xx"
-path="res://.godot/imported/Beacon_3.png-19fb8beab65d8820d01dd7dc3bc0c860.ctex"
+uid="uid://u5alb5o4da5"
+path="res://.godot/imported/Launcher_interior_forward.png-5bf90b7e590f99bf3c31e2d0b83d3d1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/sprites/Beacon_3.png"
-dest_files=["res://.godot/imported/Beacon_3.png-19fb8beab65d8820d01dd7dc3bc0c860.ctex"]
+source_file="res://assets/textures/sprites/machines/launcher/launcher_interior/Launcher_interior_forward.png"
+dest_files=["res://.godot/imported/Launcher_interior_forward.png-5bf90b7e590f99bf3c31e2d0b83d3d1d.ctex"]
 
 [params]
 

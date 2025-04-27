@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkwux107kqgd6"
-path="res://.godot/imported/collector_interior_rightfacing.png-d3df7775fb9f77da835c6e64cd2892db.ctex"
+uid="uid://igvv0yo10s2x"
+path="res://.godot/imported/beacon_2_interior.png-e0495b40a4da0fd6c0a2310833a64fef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/sprites/machines/collector/collector_interior_rightfacing.png"
-dest_files=["res://.godot/imported/collector_interior_rightfacing.png-d3df7775fb9f77da835c6e64cd2892db.ctex"]
+source_file="res://assets/textures/sprites/buildings/beacons_interiors/beacon_2_interior.png"
+dest_files=["res://.godot/imported/beacon_2_interior.png-e0495b40a4da0fd6c0a2310833a64fef.ctex"]
 
 [params]
 

@@ -1,14 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcimtslontlab"]
+[gd_scene load_steps=7 format=3 uid="uid://bcimtslontlab"]
 
 [ext_resource type="Texture2D" uid="uid://co8hd0obgqag5" path="res://assets/textures/sprites/Particle_light.png" id="1_2e2gu"]
 [ext_resource type="Texture2D" uid="uid://nd6enmopt6pe" path="res://assets/textures/point light.png" id="1_24oxn"]
 [ext_resource type="Script" uid="uid://ddnhqrkk38ctv" path="res://scenes/light.gd" id="1_ky1i4"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ky1i4"]
+friction = 0.0
+bounce = 1.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_eaa0b"]
 
-[node name="Body" type="RigidBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ky1i4"]
+
+[node name="Body" type="RigidBody2D" node_paths=PackedStringArray("collision", "light") groups=["Light"]]
 z_index = 20
+physics_material_override = SubResource("PhysicsMaterial_ky1i4")
 script = ExtResource("1_ky1i4")
+collision = NodePath("CollisionShape2D")
+light = NodePath("Sprite2D/PointLight2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.122605, 0.122605)
@@ -25,3 +34,12 @@ range_layer_max = 1
 shadow_enabled = true
 shadow_color = Color(0.164706, 0.164706, 0.164706, 1)
 texture = ExtResource("1_24oxn")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(0.366606, 0.366606)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.564976, 0.564976)
+shape = SubResource("CircleShape2D_ky1i4")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

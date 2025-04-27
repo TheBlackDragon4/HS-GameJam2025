@@ -33,8 +33,9 @@ enabled=PackedStringArray("res://addons/modular-settings-menu/plugin.cfg")
 
 [global_group]
 
-Particles=""
 Machines=""
+Absorb=""
+Light=""
 
 [input]
 

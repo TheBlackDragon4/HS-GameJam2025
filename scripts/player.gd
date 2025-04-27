@@ -97,7 +97,7 @@ func handle_inputs() -> void:
 		process_new_menu()
 
 	if Input.is_action_just_pressed("hud"):
-		var temp =  $"../NinePatchRect"
+		var temp =  root_hotbar
 		print("z/OS")
 		if temp.visible == true:
 			temp.visible = false
@@ -126,7 +126,7 @@ func rotate_body():
 		print("rotate?")
 		if i.is_in_group("Machines"):
 			print("rotate.")
-			i.get_parent().rotate_90()
+			i.rotate_90()
 	#$HotbarSlot.
 		#get_viewport().gui_get_focus_owner().
 		

@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bto8f7wq4b34h"]
+
+[ext_resource type="Texture2D" uid="uid://df2miwamr8ttc" path="res://assets/textures/sprites/machines/collector/Collector_rotations-3.png.png" id="2_lx3um"]
+[ext_resource type="Texture2D" uid="uid://dkwux107kqgd6" path="res://assets/textures/sprites/machines/collector/collector_interior/collector_interior_rightfacing.png" id="6_1ylmd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ab70d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6fmf"]
+
+[node name="rootNode" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." groups=["Machines"]]
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" groups=["Particles"]]
+texture_filter = 1
+texture = ExtResource("2_lx3um")
+
+[node name="Area2D" type="Area2D" parent="RigidBody2D/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Sprite2D/Area2D"]
+scale = Vector2(0.667034, 0.667034)
+shape = SubResource("RectangleShape2D_ab70d")
+
+[node name="inside_sprite" type="Sprite2D" parent="RigidBody2D/Sprite2D"]
+modulate = Color(0, 0.833333, 1, 0.188235)
+texture = ExtResource("6_1ylmd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+scale = Vector2(0.624173, 0.624173)
+shape = SubResource("RectangleShape2D_o6fmf")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
