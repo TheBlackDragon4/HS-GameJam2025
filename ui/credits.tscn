@@ -129,7 +129,7 @@ horizontal_alignment = 3
 
 [node name="Guys" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer6"]
 layout_mode = 2
-text = "Random Plugins, Henne  & David"
+text = "Random Plugins, Henne & David"
 horizontal_alignment = 2
 
 [node name="HBoxContainer7" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer"]
